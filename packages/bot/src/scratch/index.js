@@ -40,6 +40,9 @@ export const scratchWorkspaceInit = async (scratch_area_name, scratch_div_name) 
             },
         });
 
+        // TEMP
+        window.scratch_workspace = workspace;
+
         // Keep in memory to allow category browsing
         workspace.initial_toolbox_xml = toolbox_xml;
         
@@ -66,8 +69,6 @@ export const scratchWorkspaceInit = async (scratch_area_name, scratch_div_name) 
             el_scratch_div.style.height = `${scratch_area.offsetHeight}px`;
             
             Blockly.svgResize(workspace);
-            // eslint-disable-next-line no-underscore-dangle
-            workspace.toolbox_.flyout_.position();
         };
 
         // Resize workspace on workspace event, workaround for jumping workspace.
