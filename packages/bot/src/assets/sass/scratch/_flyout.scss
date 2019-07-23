@@ -29,12 +29,6 @@
         }
     }
     &__item {
-<<<<<<< HEAD
-        &-header {
-            display: flex;
-            flex-direction: row;
-            margin: 10px 0;
-=======
         &-button {
             width: 100%;
             font-size: 100%;
@@ -47,7 +41,6 @@
         &-header {
             display: flex;
             margin: 15px 0;
->>>>>>> bc404a1b1442d26747e9916a197114edccc86439
         }
         &-label {
             font-weight: bold;
@@ -55,20 +48,12 @@
         &-buttons {
             margin-left: auto;
             display: flex;
-<<<<<<< HEAD
-            align-items: center;
-
-            > svg {
-                height: 20px;
-                width: 20px;
-=======
             justify-content: flex-end;
 
             > .icon-info {
                 height: 20px;
                 width: 20px;
                 align-self: center;
->>>>>>> bc404a1b1442d26747e9916a197114edccc86439
             }
         }
         &-add {

@@ -34,6 +34,8 @@ Blockly.Flyout.prototype.createBlock = function(event, originalBlock) {
     if (this.autoClose) {
         this.hide();
     }
+    window.scratch_workspace.toolbox_.clearSelection();
+
     newBlock.isInFlyout = true;
     return newBlock;
 };
@@ -75,7 +77,7 @@ Blockly.Flyout.prototype.placeNewBlock_ = function(event, oldBlock) {
   
     // The position of the old block in pixels relative to the flyout
     // workspace's origin.
-    const oldBlockPosPixels = new goog.math.Coordinate(event.clientX, event.clientY);
+    const oldBlockPosPixels = new goog.math.Coordinate(event.clientX - 50, event.clientY - 20);
   
     // The position of the old block in pixels relative to the upper left corner
     // of the injection div.
