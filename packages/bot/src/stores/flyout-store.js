@@ -91,15 +91,16 @@ export default class FlyoutStore {
         const dy = 5 + extra_spacing;
 
         block.moveBy(dx, dy);
+        block.isInFlyout = true;
 
         // Use original flyout to handle mouse events.
         const original_flyout = window.scratch_workspace.toolbox_.flyout_;
         const blockSvgRoot = block.getSvgRoot();
-
+        
         this.listeners.push(
             Blockly.bindEventWithChecks_(blockSvgRoot, 'mousedown', null, original_flyout.blockMouseDown_(block))
         );
-
+        
         const block_coordinates_initial = block.getRelativeToSurfaceXY();
 
         workspace.addChangeListener((event) => {
