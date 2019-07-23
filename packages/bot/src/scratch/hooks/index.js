@@ -10,3 +10,4 @@ import './toolbox';
 import './variables';
 import './gesture';
 import './flyout_base';
+import './workspace_audio';

@@ -24,9 +24,11 @@ import { observer as globalObserver }     from '../utils/observer';
 
 export const scratchWorkspaceInit = async (scratch_area_name, scratch_div_name) => {
     try {
+        const el_scratch_div = document.getElementById(scratch_div_name);
+
         const toolbox_xml = await fetch('dist/toolbox.xml').then(response => response.text());
         const main_xml = await fetch('dist/main.xml').then(response => response.text());
-        const workspace = Blockly.inject(scratch_div_name, {
+        const workspace = Blockly.inject(el_scratch_div, {
             media  : 'dist/media/',
             toolbox: toolbox_xml,
             grid   : {
@@ -51,7 +53,6 @@ export const scratchWorkspaceInit = async (scratch_area_name, scratch_div_name) 
         const onWorkspaceResize = () => {
             let el_scratch_area = document.getElementById(scratch_area_name);
             const scratch_area = el_scratch_area;
-            const el_scratch_div = document.getElementById(scratch_div_name);
         
             let x = 0;
             let y = 0;

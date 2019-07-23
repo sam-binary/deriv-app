@@ -27,4 +27,8 @@ export const Stage1Icon = Icon(stage1);
 export const Stage2Icon = Icon(stage2);
 export const Stage3Icon = Icon(stage3);
 export const Stage4Icon = Icon(stage4);
+<<<<<<< HEAD
 export const InfoBlueIcon = Icon(infoBlue);
+=======
+export const BlueInfoIcon = Icon(blueInfo);
+>>>>>>> bc404a1b1442d26747e9916a197114edccc86439

@@ -114,7 +114,9 @@ Blockly.Toolbox.prototype.setSelectedItem = function (item) {
             this.selectedItem_.id_ === item.id_
         ) {
             this.selectedItem_ = null;
-            flyout.setVisibility(false);
+            if (flyout.is_visible) {
+                flyout.setVisibility(false);
+            }
             return;
         }
     }
@@ -122,8 +124,9 @@ Blockly.Toolbox.prototype.setSelectedItem = function (item) {
     this.selectedItem_ = item;
     flyout.setVisibility(false);
 
-    if (item) {
-        flyout.setVisibility(true);
+    if (!item) {
+        flyout.setVisibility(false);
+    } else {
         const getCategoryTree = (parent_name, parent_id, colour, children) => {
             const xml_document = document.implementation.createDocument(null, null, null);
             const el_xml = xml_document.createElement('xml');
