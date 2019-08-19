@@ -297,19 +297,32 @@ html {
   left: 0;
   right: 0;
   bottom: 0; }
+  .full-page-modal__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.15s linear; }
+    .full-page-modal__background--enter, .full-page-modal__background--exit {
+      opacity: 0; }
+    .full-page-modal__background--enter-done {
+      opacity: 1; }
+    .theme--light .full-page-modal__background {
+      background-color: rgba(255, 255, 255, 0.56); }
+    .theme--dark .full-page-modal__background {
+      background-color: rgba(16, 19, 32, 0.56); }
   .full-page-modal__wrapper {
     position: absolute;
     left: calc(100vw - 70%);
     top: calc(100vh - 70%);
-    transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25), opacity 0.25s cubic-bezier(0.25, 0.1, 0.1, 0.25); }
+    transition: transform 0.15s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.15s linear; }
     .full-page-modal__wrapper--enter, .full-page-modal__wrapper--exit {
-      transform: translateY(50px);
-      opacity: 0;
-      pointer-events: none; }
+      transform: translate3d(0, 50px, 0);
+      opacity: 0; }
     .full-page-modal__wrapper--enter-done {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto; }
+      transform: translate3d(0, 0, 0);
+      opacity: 1; }
   .full-page-modal__dialog {
     max-width: 560px;
     max-height: 320px;
@@ -321,13 +334,12 @@ html {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    align-items: flex-start; }
+    align-items: flex-start;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16); }
     .theme--light .full-page-modal__dialog {
-      background-color: #ffffff;
-      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.4); }
+      background-color: #ffffff; }
     .theme--dark .full-page-modal__dialog {
-      background-color: #191c31;
-      box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.72); }
+      background-color: #191c31; }
   .full-page-modal__header {
     font-size: 1.6em;
     color: rgba(0, 0, 0, 0.8);
