@@ -3,8 +3,8 @@
     <!-- Trade Parameters -->
     <category 
         id="trade_parameters" 
-        name="Set up your trade" 
-        description="Choose market, contract-type, stake, duration, and barrier"
+        name="Trade parameters" 
+        description="Trade duration, barrier, stake"
         iconURI="ic-stage-1"
     >
         <block type="trade_definition">
@@ -69,48 +69,40 @@
     <!-- Purchase Conditions -->
     <category 
         id="purchase_conditions" 
-        name="Purchase contract" 
-        description="Define purchase conditions, select trade-type" 
+        name="Purchase conditions" 
+        description="Purchase contract, get payout/price" 
         iconURI="ic-stage-2"
     >
         <block type="before_purchase"></block>
+        <block type="payout"></block>
+        <block type="ask_price"></block>
         <block type="purchase"></block>
     </category>
     <!-- Sell Conditions -->
     <category 
         id="sell_conditions" 
-        name="Sell contract (optional)" 
-        description="Sell active contract at market price if you wish" 
+        name="Sell conditions" 
+        description="Sell at market price if needed" 
         iconURI="ic-stage-3"
     >
         <block type="during_purchase"></block>
+        <block type="check_sell"></block>
+        <block type="sell_price"></block>
         <block type="sell_at_market"></block>
     </category>
     <!-- Trade Results -->
     <category 
         id="trade_results" 
-        name="Trade again" 
-        description="Check your trade results and trade again" 
+        name="Trade results" 
+        description="Expired contract details, stop loss" 
         iconURI="ic-stage-4"
     >
         <block type="after_purchase"></block>
+        <block type="contract_check_result"></block>
+        <block type="read_details"></block>
         <block type="trade_again"></block>
     </category>
     <sep />
-    <!-- Contract details -->
-    <category 
-        id="contract_details" 
-        name="Contract details" 
-        description="Statement, payout, purchase price, etc." 
-    >
-        <block type="contract_check_result"></block>
-        <block type="read_details"></block>
-        <block type="check_sell"></block>
-        <block type="sell_price"></block>
-        <block type="payout"></block>
-        <block type="ask_price"></block>
-         
-    </category>
     <!-- Technical Analysis -->
     <category 
         id="technical_analysis" 
@@ -418,7 +410,7 @@
         </category>
         <category name="Custom functions" id="custom_functions" description="Helps to make strategy clear" dynamic="PROCEDURE"></category>
         <category name="Variables" id="variables" description="Store values during run time" dynamic="VARIABLE"></category>
-        <category name="Loops" id="loops" description="Repeat instructions until condition is met">
+        <category name="Loops" id="loops" description="arithmetical operations">
             <block type="controls_repeat_ext"></block>
             <block type="controls_repeat"></block>
             <block type="controls_whileUntil"></block>
