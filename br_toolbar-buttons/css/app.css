@@ -2189,10 +2189,12 @@ html {
       left: 16px;
       height: calc(100vh - 48px - 35px - (8px * 4));
       border-bottom-right-radius: 0;
-      border-top-right-radius: 0; }
+      border-top-right-radius: 0;
+      z-index: 1; }
       .trade-container__replay .contract-drawer-wrapper {
         z-index: 4; }
     .trade-container__replay .replay-chart__container {
+      z-index: 1;
       width: 100%;
       position: relative;
       margin-left: 252px; }
