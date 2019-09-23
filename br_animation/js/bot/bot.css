@@ -1289,7 +1289,7 @@
   position: absolute;
   top: 0;
   width: 18px;
-  height: 100vh;
+  height: 100%;
   display: table-cell;
   vertical-align: middle;
   cursor: pointer; }
@@ -1700,6 +1700,12 @@
   100% {
     transform: scale(0); } }
 
+@keyframes animate-circle-appear {
+  0% {
+    transform: scale(0); }
+  100% {
+    transform: scale(1); } }
+
 .animation__container {
   width: 354px;
   padding: 5px 12px;
@@ -1723,6 +1729,8 @@
     width: 8px;
     height: 8px;
     display: flex; }
+    .animation__progress .circular-wrapper.completed .static-circle, .animation__progress .circular-wrapper.completed .dynamic-circle, .animation__progress .circular-wrapper.active .static-circle, .animation__progress .circular-wrapper.active .dynamic-circle {
+      transform: scale(1.2); }
     .animation__progress .circular-wrapper.completed .static-circle {
       background-color: #4bb4b3; }
     .animation__progress .circular-wrapper.active .dynamic-circle {
@@ -1732,13 +1740,14 @@
       background-color: #4bb4b3;
       border-radius: 100%;
       opacity: 0.32;
-      margin-left: -1.55px;
-      margin-top: -1.55px;
+      margin-left: -2px;
+      margin-top: -2px;
       animation: animate-circle 0.8s infinite;
       animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1); }
     .animation__progress .circular-wrapper.active .static-circle {
       border: 2px solid #4bb4b3;
-      background-color: #ffffff; }
+      background-color: #ffffff;
+      animation: animate-circle-appear 1s; }
     .animation__progress .circular-wrapper .static-circle {
       width: 8px;
       height: 8px;
@@ -1750,7 +1759,7 @@
     background-color: #f4f4f6;
     height: 2.5px;
     width: 100%;
-    top: 40%;
+    top: 38%;
     position: absolute; }
   .animation__progress-bar {
     background-color: #39b19d;
@@ -1760,13 +1769,16 @@
     animation: animate-progress 0.5s 1;
     animation-fill-mode: forwards; }
   .animation__progress-3 {
+    width: calc(50% - 3.5px); }
+  .animation__progress-4 {
     animation: animate-progress-complete 0.5s 1;
     animation-fill-mode: forwards; }
-  .animation__progress-4 {
+  .animation__progress-5 {
     width: 100%; }
 
 .animation--running .animation__progress .static-circle {
-  background-color: #ffad3a; }
+  background-color: #ffad3a;
+  animation: animate-circle-appear 1s; }
 
 /*------------------------------------*
  *  # Constants
