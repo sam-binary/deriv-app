@@ -1218,6 +1218,11 @@
             @extend %inline-icon.active;
         }
 */
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
 :root {
   --text-size-xxs: 1.2rem;
   --text-size-xs: 1.4rem;
@@ -1233,20 +1238,20 @@
   --brand-secondary: #85acb0; }
 
 :root .theme--light {
-  --general-main-1: #fff;
-  --general-main-2: #fff;
+  --general-main-1: #ffffff;
+  --general-main-2: #ffffff;
   --general-section-1: #f2f3f4;
   --general-section-2: #f2f3f4;
   --general-disabled: #eaeced;
   --general-hover: #e6e9e9;
   --general-active: #d6dadb;
-  --text-prominent: #333;
-  --text-general: #333;
-  --text-less-prominent: #999;
+  --text-prominent: #333333;
+  --text-general: #333333;
+  --text-less-prominent: #999999;
   --text-disabled: #d6d6d6;
   --text-profit-success: #4bb4b3;
   --text-loss-danger: #ec3f3f;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #4bb4b3;
   --purchase-section-1: #3d9494;
   --purchase-main-2: #ec3f3f;
@@ -1254,24 +1259,24 @@
   --purchase-disabled-main: #eaeced;
   --purchase-disabled-section: #e6e9e9;
   --button-primary-default: var(--brand-red-coral);
-  --button-secondary-default: #999;
+  --button-secondary-default: #999999;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(255,255,255,0.960784);
-  --shadow-menu: rgba(0,0,0,0.160784);
-  --state-normal: #fff;
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #fffffff5;
+  --shadow-menu: #00000029;
+  --state-normal: #ffffff;
   --state-hover: #e6e9e9;
   --state-active: #d6dadb;
   --state-disabled: #eaeced;
   --border-normal: #d6dadb;
-  --border-hover: #999;
+  --border-hover: #999999;
   --border-active: var(--brand-secondary);
   --border-disabled: #eaeced;
-  --fill-normal: #fff;
-  --fill-hover: #999;
+  --fill-normal: #ffffff;
+  --fill-hover: #999999;
   --fill-active: var(--brand-secondary);
   --fill-disabled: #eaeced;
   --status-default: #eaeced;
@@ -1279,7 +1284,7 @@
   --status-success: #4bb4b3;
   --status-warning: #ffad3a;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#4bb4b3, 0.92); }
 
 :root .theme--dark {
@@ -1290,13 +1295,13 @@
   --general-disabled: #1d1f20;
   --general-hover: #242828;
   --general-active: #323738;
-  --text-prominent: #fff;
+  --text-prominent: #ffffff;
   --text-general: #c2c2c2;
   --text-less-prominent: #6e6e6e;
   --text-disabled: #3e3e3e;
   --text-profit-success: #00a79e;
   --text-loss-danger: #cc2e3d;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #00a79e;
   --purchase-section-1: #008079;
   --purchase-main-2: #cc2e3d;
@@ -1307,11 +1312,11 @@
   --button-secondary-default: #6e6e6e;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(14,14,14,0.960784);
-  --shadow-menu: rgba(0,0,0,0.301961);
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #0e0e0ef5;
+  --shadow-menu: #0000004d;
   --state-normal: #0e0e0e;
   --state-hover: #242828;
   --state-active: #323738;
@@ -1329,9 +1334,119 @@
   --status-warning: #ffad3a;
   --status-success: #00a79e;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#00a79e, 0.92); }
 
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Implementation of themes
+ * generate sets of themes keys object property (dark / light)
+ * @param $themes - themes property
+ * Usage example:
+   @include themify($themes) { color: themed('background_color') }
+ */
+/*
+ * Generate typefaces key-value pair of themefy object
+ * Should be inside themify mixins
+ * Example:
+   @include themify($themes) { border-color: 1px solid themed('background_color') }
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Themified Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/** @define btn */
 .btn {
   font-size: 1rem;
   display: inline-block;
@@ -1347,7 +1462,8 @@
   transition: all 0.2s cubic-bezier(0.65, 0.05, 0.36, 1);
   outline: 0;
   position: relative;
-  background: var(--button-primary-default); }
+  background: var(--button-primary-default);
+  /* postcss-bem-linter: ignore */ }
 
 .btn__text {
   font-size: 1.4em;
@@ -1383,28 +1499,30 @@
   cursor: not-allowed !important; }
 
 .btn--primary--default .btn__text {
-  color: #fff; }
+  color: #ffffff; }
 
 .btn--primary .btn__text {
-  color: #fff; }
+  color: #ffffff; }
 
 .btn--primary--orange {
-  background: #f93; }
+  background: #ff9933;
+  /* postcss-bem-linter: ignore */ }
 
 .btn--primary--orange:hover:not([disabled]) {
   background: rgba(255, 153, 51, 0.84); }
 
 .btn--primary--orange:active:not([disabled]) {
-  background: #f93; }
+  background: #ff9933; }
 
 .btn--primary--orange.effect:focus:not(:active):after {
-  border: 0 solid #f93; }
+  border: 0 solid #ff9933; }
 
 .btn--primary--red {
   background: var(--button-primary-default); }
 
 .btn--primary--green {
-  background: #39b19d; }
+  background: #39b19d;
+  /* postcss-bem-linter: ignore */ }
 
 .btn--primary--green:hover:not([disabled]) {
   background: #2d9f93; }
@@ -1459,17 +1577,20 @@
 .btn--secondary--large .btn__text {
   color: var(--text-prominent); }
 
+.btn--secondary--orange {
+  /* postcss-bem-linter: ignore */ }
+
 .btn--secondary--orange .btn__text {
-  color: #f93; }
+  color: #ff9933; }
 
 .btn--secondary--orange:hover:not([disabled]) {
   background: rgba(255, 153, 51, 0.16); }
 
 .btn--secondary--orange:active:not([disabled]) {
-  color: #f93; }
+  color: #ff9933; }
 
 .btn--secondary--orange.effect:focus:not(:active):after {
-  border: 0 solid #f93; }
+  border: 0 solid #ff9933; }
 
 .btn--secondary--red {
   border: 1px solid var(--button-primary-default); }
@@ -1478,7 +1599,8 @@
   color: var(--brand-red-coral); }
 
 .btn--secondary--green {
-  border: 1px solid #39b19d; }
+  border: 1px solid #39b19d;
+  /* postcss-bem-linter: ignore */ }
 
 .btn--secondary--green .btn__text {
   color: #39b19d; }
@@ -1511,7 +1633,8 @@
   background: var(--button-tertiary-default); }
 
 .btn--tertiary--default .btn__text {
-  color: var(--brand-red-coral); }
+  color: var(--brand-red-coral);
+  /* stylelint-disable-line color-no-hex */ }
 
 .btn--tertiary--default:disabled, .btn--tertiary--default[disabled] {
   opacity: 0.32;
@@ -1521,10 +1644,13 @@
   background-color: transparent;
   font-weight: bold;
   border: solid 1px #999999;
-  height: 3.2em; }
+  /* stylelint-disable-line color-no-hex */
+  height: 3.2em;
+  /* postcss-bem-linter: ignore */ }
 
 .btn--flat .btn__text {
-  color: #333333; }
+  color: #333333;
+  /* stylelint-disable-line color-no-hex */ }
 
 .btn--flat:hover:not([disabled]) {
   background: transparent; }
@@ -1533,11 +1659,13 @@
   color: transparent; }
 
 .btn--flat.effect:focus:not(:active):after {
-  border: 0 solid #4c5794; }
+  border: 0 solid #4c5794;
+  /* stylelint-disable-line color-no-hex */ }
 
 .btn--flat:disabled, .btn--flat[disabled] {
   background: transparent !important;
   border: 1px solid rgba(0, 0, 0, 0.04) !important;
+  /* stylelint-disable-line color-no-hex */
   cursor: not-allowed !important; }
 
 .btn--flat:disabled .btn__text, .btn--flat[disabled] .btn__text {
@@ -1804,6 +1932,11 @@
             @extend %inline-icon.active;
         }
 */
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
 :root {
   --text-size-xxs: 1.2rem;
   --text-size-xs: 1.4rem;
@@ -1819,20 +1952,20 @@
   --brand-secondary: #85acb0; }
 
 :root .theme--light {
-  --general-main-1: #fff;
-  --general-main-2: #fff;
+  --general-main-1: #ffffff;
+  --general-main-2: #ffffff;
   --general-section-1: #f2f3f4;
   --general-section-2: #f2f3f4;
   --general-disabled: #eaeced;
   --general-hover: #e6e9e9;
   --general-active: #d6dadb;
-  --text-prominent: #333;
-  --text-general: #333;
-  --text-less-prominent: #999;
+  --text-prominent: #333333;
+  --text-general: #333333;
+  --text-less-prominent: #999999;
   --text-disabled: #d6d6d6;
   --text-profit-success: #4bb4b3;
   --text-loss-danger: #ec3f3f;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #4bb4b3;
   --purchase-section-1: #3d9494;
   --purchase-main-2: #ec3f3f;
@@ -1840,24 +1973,24 @@
   --purchase-disabled-main: #eaeced;
   --purchase-disabled-section: #e6e9e9;
   --button-primary-default: var(--brand-red-coral);
-  --button-secondary-default: #999;
+  --button-secondary-default: #999999;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(255,255,255,0.960784);
-  --shadow-menu: rgba(0,0,0,0.160784);
-  --state-normal: #fff;
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #fffffff5;
+  --shadow-menu: #00000029;
+  --state-normal: #ffffff;
   --state-hover: #e6e9e9;
   --state-active: #d6dadb;
   --state-disabled: #eaeced;
   --border-normal: #d6dadb;
-  --border-hover: #999;
+  --border-hover: #999999;
   --border-active: var(--brand-secondary);
   --border-disabled: #eaeced;
-  --fill-normal: #fff;
-  --fill-hover: #999;
+  --fill-normal: #ffffff;
+  --fill-hover: #999999;
   --fill-active: var(--brand-secondary);
   --fill-disabled: #eaeced;
   --status-default: #eaeced;
@@ -1865,7 +1998,7 @@
   --status-success: #4bb4b3;
   --status-warning: #ffad3a;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#4bb4b3, 0.92); }
 
 :root .theme--dark {
@@ -1876,13 +2009,13 @@
   --general-disabled: #1d1f20;
   --general-hover: #242828;
   --general-active: #323738;
-  --text-prominent: #fff;
+  --text-prominent: #ffffff;
   --text-general: #c2c2c2;
   --text-less-prominent: #6e6e6e;
   --text-disabled: #3e3e3e;
   --text-profit-success: #00a79e;
   --text-loss-danger: #cc2e3d;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #00a79e;
   --purchase-section-1: #008079;
   --purchase-main-2: #cc2e3d;
@@ -1893,11 +2026,11 @@
   --button-secondary-default: #6e6e6e;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(14,14,14,0.960784);
-  --shadow-menu: rgba(0,0,0,0.301961);
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #0e0e0ef5;
+  --shadow-menu: #0000004d;
   --state-normal: #0e0e0e;
   --state-hover: #242828;
   --state-active: #323738;
@@ -1915,9 +2048,118 @@
   --status-warning: #ffad3a;
   --status-success: #00a79e;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#00a79e, 0.92); }
 
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Implementation of themes
+ * generate sets of themes keys object property (dark / light)
+ * @param $themes - themes property
+ * Usage example:
+   @include themify($themes) { color: themed('background_color') }
+ */
+/*
+ * Generate typefaces key-value pair of themefy object
+ * Should be inside themify mixins
+ * Example:
+   @include themify($themes) { border-color: 1px solid themed('background_color') }
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Themified Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
 .dc-field-error {
   position: absolute;
   top: 4rem;
@@ -1927,6 +2169,11 @@
   color: var(--brand-red-coral);
   font-size: var(--text-size-xxs); }
 
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
 :root {
   --text-size-xxs: 1.2rem;
   --text-size-xs: 1.4rem;
@@ -1942,20 +2189,20 @@
   --brand-secondary: #85acb0; }
 
 :root .theme--light {
-  --general-main-1: #fff;
-  --general-main-2: #fff;
+  --general-main-1: #ffffff;
+  --general-main-2: #ffffff;
   --general-section-1: #f2f3f4;
   --general-section-2: #f2f3f4;
   --general-disabled: #eaeced;
   --general-hover: #e6e9e9;
   --general-active: #d6dadb;
-  --text-prominent: #333;
-  --text-general: #333;
-  --text-less-prominent: #999;
+  --text-prominent: #333333;
+  --text-general: #333333;
+  --text-less-prominent: #999999;
   --text-disabled: #d6d6d6;
   --text-profit-success: #4bb4b3;
   --text-loss-danger: #ec3f3f;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #4bb4b3;
   --purchase-section-1: #3d9494;
   --purchase-main-2: #ec3f3f;
@@ -1963,24 +2210,24 @@
   --purchase-disabled-main: #eaeced;
   --purchase-disabled-section: #e6e9e9;
   --button-primary-default: var(--brand-red-coral);
-  --button-secondary-default: #999;
+  --button-secondary-default: #999999;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(255,255,255,0.960784);
-  --shadow-menu: rgba(0,0,0,0.160784);
-  --state-normal: #fff;
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #fffffff5;
+  --shadow-menu: #00000029;
+  --state-normal: #ffffff;
   --state-hover: #e6e9e9;
   --state-active: #d6dadb;
   --state-disabled: #eaeced;
   --border-normal: #d6dadb;
-  --border-hover: #999;
+  --border-hover: #999999;
   --border-active: var(--brand-secondary);
   --border-disabled: #eaeced;
-  --fill-normal: #fff;
-  --fill-hover: #999;
+  --fill-normal: #ffffff;
+  --fill-hover: #999999;
   --fill-active: var(--brand-secondary);
   --fill-disabled: #eaeced;
   --status-default: #eaeced;
@@ -1988,7 +2235,7 @@
   --status-success: #4bb4b3;
   --status-warning: #ffad3a;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#4bb4b3, 0.92); }
 
 :root .theme--dark {
@@ -1999,13 +2246,13 @@
   --general-disabled: #1d1f20;
   --general-hover: #242828;
   --general-active: #323738;
-  --text-prominent: #fff;
+  --text-prominent: #ffffff;
   --text-general: #c2c2c2;
   --text-less-prominent: #6e6e6e;
   --text-disabled: #3e3e3e;
   --text-profit-success: #00a79e;
   --text-loss-danger: #cc2e3d;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #00a79e;
   --purchase-section-1: #008079;
   --purchase-main-2: #cc2e3d;
@@ -2016,11 +2263,11 @@
   --button-secondary-default: #6e6e6e;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(14,14,14,0.960784);
-  --shadow-menu: rgba(0,0,0,0.301961);
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #0e0e0ef5;
+  --shadow-menu: #0000004d;
   --state-normal: #0e0e0e;
   --state-hover: #242828;
   --state-active: #323738;
@@ -2038,9 +2285,118 @@
   --status-warning: #ffad3a;
   --status-success: #00a79e;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#00a79e, 0.92); }
 
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Implementation of themes
+ * generate sets of themes keys object property (dark / light)
+ * @param $themes - themes property
+ * Usage example:
+   @include themify($themes) { color: themed('background_color') }
+ */
+/*
+ * Generate typefaces key-value pair of themefy object
+ * Should be inside themify mixins
+ * Example:
+   @include themify($themes) { border-color: 1px solid themed('background_color') }
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Themified Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
 .dc-input {
   position: relative;
   width: 100%;
@@ -2375,6 +2731,11 @@
             @extend %inline-icon.active;
         }
 */
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
 :root {
   --text-size-xxs: 1.2rem;
   --text-size-xs: 1.4rem;
@@ -2390,20 +2751,20 @@
   --brand-secondary: #85acb0; }
 
 :root .theme--light {
-  --general-main-1: #fff;
-  --general-main-2: #fff;
+  --general-main-1: #ffffff;
+  --general-main-2: #ffffff;
   --general-section-1: #f2f3f4;
   --general-section-2: #f2f3f4;
   --general-disabled: #eaeced;
   --general-hover: #e6e9e9;
   --general-active: #d6dadb;
-  --text-prominent: #333;
-  --text-general: #333;
-  --text-less-prominent: #999;
+  --text-prominent: #333333;
+  --text-general: #333333;
+  --text-less-prominent: #999999;
   --text-disabled: #d6d6d6;
   --text-profit-success: #4bb4b3;
   --text-loss-danger: #ec3f3f;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #4bb4b3;
   --purchase-section-1: #3d9494;
   --purchase-main-2: #ec3f3f;
@@ -2411,24 +2772,24 @@
   --purchase-disabled-main: #eaeced;
   --purchase-disabled-section: #e6e9e9;
   --button-primary-default: var(--brand-red-coral);
-  --button-secondary-default: #999;
+  --button-secondary-default: #999999;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(255,255,255,0.960784);
-  --shadow-menu: rgba(0,0,0,0.160784);
-  --state-normal: #fff;
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #fffffff5;
+  --shadow-menu: #00000029;
+  --state-normal: #ffffff;
   --state-hover: #e6e9e9;
   --state-active: #d6dadb;
   --state-disabled: #eaeced;
   --border-normal: #d6dadb;
-  --border-hover: #999;
+  --border-hover: #999999;
   --border-active: var(--brand-secondary);
   --border-disabled: #eaeced;
-  --fill-normal: #fff;
-  --fill-hover: #999;
+  --fill-normal: #ffffff;
+  --fill-hover: #999999;
   --fill-active: var(--brand-secondary);
   --fill-disabled: #eaeced;
   --status-default: #eaeced;
@@ -2436,7 +2797,7 @@
   --status-success: #4bb4b3;
   --status-warning: #ffad3a;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#4bb4b3, 0.92); }
 
 :root .theme--dark {
@@ -2447,13 +2808,13 @@
   --general-disabled: #1d1f20;
   --general-hover: #242828;
   --general-active: #323738;
-  --text-prominent: #fff;
+  --text-prominent: #ffffff;
   --text-general: #c2c2c2;
   --text-less-prominent: #6e6e6e;
   --text-disabled: #3e3e3e;
   --text-profit-success: #00a79e;
   --text-loss-danger: #cc2e3d;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #00a79e;
   --purchase-section-1: #008079;
   --purchase-main-2: #cc2e3d;
@@ -2464,11 +2825,11 @@
   --button-secondary-default: #6e6e6e;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(14,14,14,0.960784);
-  --shadow-menu: rgba(0,0,0,0.301961);
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #0e0e0ef5;
+  --shadow-menu: #0000004d;
   --state-normal: #0e0e0e;
   --state-hover: #242828;
   --state-active: #323738;
@@ -2486,9 +2847,118 @@
   --status-warning: #ffad3a;
   --status-success: #00a79e;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#00a79e, 0.92); }
 
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Implementation of themes
+ * generate sets of themes keys object property (dark / light)
+ * @param $themes - themes property
+ * Usage example:
+   @include themify($themes) { color: themed('background_color') }
+ */
+/*
+ * Generate typefaces key-value pair of themefy object
+ * Should be inside themify mixins
+ * Example:
+   @include themify($themes) { border-color: 1px solid themed('background_color') }
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Themified Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
 .dc-checkbox {
   display: flex;
   justify-content: flex-start;
@@ -2747,6 +3217,11 @@
             @extend %inline-icon.active;
         }
 */
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
 :root {
   --text-size-xxs: 1.2rem;
   --text-size-xs: 1.4rem;
@@ -2762,20 +3237,20 @@
   --brand-secondary: #85acb0; }
 
 :root .theme--light {
-  --general-main-1: #fff;
-  --general-main-2: #fff;
+  --general-main-1: #ffffff;
+  --general-main-2: #ffffff;
   --general-section-1: #f2f3f4;
   --general-section-2: #f2f3f4;
   --general-disabled: #eaeced;
   --general-hover: #e6e9e9;
   --general-active: #d6dadb;
-  --text-prominent: #333;
-  --text-general: #333;
-  --text-less-prominent: #999;
+  --text-prominent: #333333;
+  --text-general: #333333;
+  --text-less-prominent: #999999;
   --text-disabled: #d6d6d6;
   --text-profit-success: #4bb4b3;
   --text-loss-danger: #ec3f3f;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #4bb4b3;
   --purchase-section-1: #3d9494;
   --purchase-main-2: #ec3f3f;
@@ -2783,24 +3258,24 @@
   --purchase-disabled-main: #eaeced;
   --purchase-disabled-section: #e6e9e9;
   --button-primary-default: var(--brand-red-coral);
-  --button-secondary-default: #999;
+  --button-secondary-default: #999999;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(255,255,255,0.960784);
-  --shadow-menu: rgba(0,0,0,0.160784);
-  --state-normal: #fff;
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #fffffff5;
+  --shadow-menu: #00000029;
+  --state-normal: #ffffff;
   --state-hover: #e6e9e9;
   --state-active: #d6dadb;
   --state-disabled: #eaeced;
   --border-normal: #d6dadb;
-  --border-hover: #999;
+  --border-hover: #999999;
   --border-active: var(--brand-secondary);
   --border-disabled: #eaeced;
-  --fill-normal: #fff;
-  --fill-hover: #999;
+  --fill-normal: #ffffff;
+  --fill-hover: #999999;
   --fill-active: var(--brand-secondary);
   --fill-disabled: #eaeced;
   --status-default: #eaeced;
@@ -2808,7 +3283,7 @@
   --status-success: #4bb4b3;
   --status-warning: #ffad3a;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#4bb4b3, 0.92); }
 
 :root .theme--dark {
@@ -2819,13 +3294,13 @@
   --general-disabled: #1d1f20;
   --general-hover: #242828;
   --general-active: #323738;
-  --text-prominent: #fff;
+  --text-prominent: #ffffff;
   --text-general: #c2c2c2;
   --text-less-prominent: #6e6e6e;
   --text-disabled: #3e3e3e;
   --text-profit-success: #00a79e;
   --text-loss-danger: #cc2e3d;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #00a79e;
   --purchase-section-1: #008079;
   --purchase-main-2: #cc2e3d;
@@ -2836,11 +3311,11 @@
   --button-secondary-default: #6e6e6e;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(14,14,14,0.960784);
-  --shadow-menu: rgba(0,0,0,0.301961);
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #0e0e0ef5;
+  --shadow-menu: #0000004d;
   --state-normal: #0e0e0e;
   --state-hover: #242828;
   --state-active: #323738;
@@ -2858,14 +3333,135 @@
   --status-warning: #ffad3a;
   --status-success: #00a79e;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#00a79e, 0.92); }
+
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Implementation of themes
+ * generate sets of themes keys object property (dark / light)
+ * @param $themes - themes property
+ * Usage example:
+   @include themify($themes) { color: themed('background_color') }
+ */
+/*
+ * Generate typefaces key-value pair of themefy object
+ * Should be inside themify mixins
+ * Example:
+   @include themify($themes) { border-color: 1px solid themed('background_color') }
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Themified Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+.dc-modal-header__close {
+  /* postcss-bem-linter: ignore */
+  /* postcss-bem-linter: ignore */ }
 
 .dc-modal-header__close .color1-fill {
   fill: var(--text-prominent); }
 
 .dc-modal-header__close .color1-stroke {
   stroke: var(--text-prominent); }
+
+/**
+ * @define dc-modal
+ */
+.dc-modal {
+  /**
+     * @define dc-modal-header
+     */ }
 
 .dc-modal__container {
   min-width: 400px;
@@ -2904,7 +3500,6 @@
   text-transform: capitalize;
   text-align: left;
   line-height: 1.75;
-  background-color: var(--general-section-1);
   color: var(--text-prominent);
   line-height: 24px;
   padding: 16px; }
@@ -3419,7 +4014,7 @@
       align-self: center;
       margin: 0 4px; }
     .toolbar__section > .toolbar__btn-icon {
-      margin: 0;
+      margin: 0 4px;
       height: calc(56px - 18px); }
     .toolbar__section > .toolbar__form .dc-input {
       margin-bottom: 5px; }
@@ -3674,6 +4269,11 @@
             @extend %inline-icon.active;
         }
 */
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
 :root {
   --text-size-xxs: 1.2rem;
   --text-size-xs: 1.4rem;
@@ -3689,20 +4289,20 @@
   --brand-secondary: #85acb0; }
 
 :root .theme--light {
-  --general-main-1: #fff;
-  --general-main-2: #fff;
+  --general-main-1: #ffffff;
+  --general-main-2: #ffffff;
   --general-section-1: #f2f3f4;
   --general-section-2: #f2f3f4;
   --general-disabled: #eaeced;
   --general-hover: #e6e9e9;
   --general-active: #d6dadb;
-  --text-prominent: #333;
-  --text-general: #333;
-  --text-less-prominent: #999;
+  --text-prominent: #333333;
+  --text-general: #333333;
+  --text-less-prominent: #999999;
   --text-disabled: #d6d6d6;
   --text-profit-success: #4bb4b3;
   --text-loss-danger: #ec3f3f;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #4bb4b3;
   --purchase-section-1: #3d9494;
   --purchase-main-2: #ec3f3f;
@@ -3710,24 +4310,24 @@
   --purchase-disabled-main: #eaeced;
   --purchase-disabled-section: #e6e9e9;
   --button-primary-default: var(--brand-red-coral);
-  --button-secondary-default: #999;
+  --button-secondary-default: #999999;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(255,255,255,0.960784);
-  --shadow-menu: rgba(0,0,0,0.160784);
-  --state-normal: #fff;
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #fffffff5;
+  --shadow-menu: #00000029;
+  --state-normal: #ffffff;
   --state-hover: #e6e9e9;
   --state-active: #d6dadb;
   --state-disabled: #eaeced;
   --border-normal: #d6dadb;
-  --border-hover: #999;
+  --border-hover: #999999;
   --border-active: var(--brand-secondary);
   --border-disabled: #eaeced;
-  --fill-normal: #fff;
-  --fill-hover: #999;
+  --fill-normal: #ffffff;
+  --fill-hover: #999999;
   --fill-active: var(--brand-secondary);
   --fill-disabled: #eaeced;
   --status-default: #eaeced;
@@ -3735,7 +4335,7 @@
   --status-success: #4bb4b3;
   --status-warning: #ffad3a;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#4bb4b3, 0.92); }
 
 :root .theme--dark {
@@ -3746,13 +4346,13 @@
   --general-disabled: #1d1f20;
   --general-hover: #242828;
   --general-active: #323738;
-  --text-prominent: #fff;
+  --text-prominent: #ffffff;
   --text-general: #c2c2c2;
   --text-less-prominent: #6e6e6e;
   --text-disabled: #3e3e3e;
   --text-profit-success: #00a79e;
   --text-loss-danger: #cc2e3d;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #00a79e;
   --purchase-section-1: #008079;
   --purchase-main-2: #cc2e3d;
@@ -3763,11 +4363,11 @@
   --button-secondary-default: #6e6e6e;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(14,14,14,0.960784);
-  --shadow-menu: rgba(0,0,0,0.301961);
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #0e0e0ef5;
+  --shadow-menu: #0000004d;
   --state-normal: #0e0e0e;
   --state-hover: #242828;
   --state-active: #323738;
@@ -3785,9 +4385,119 @@
   --status-warning: #ffad3a;
   --status-success: #00a79e;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#00a79e, 0.92); }
 
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Implementation of themes
+ * generate sets of themes keys object property (dark / light)
+ * @param $themes - themes property
+ * Usage example:
+   @include themify($themes) { color: themed('background_color') }
+ */
+/*
+ * Generate typefaces key-value pair of themefy object
+ * Should be inside themify mixins
+ * Example:
+   @include themify($themes) { border-color: 1px solid themed('background_color') }
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Themified Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
+/** @define dc-drawer */
 .dc-drawer {
   position: absolute;
   top: 1px;
@@ -4094,6 +4804,11 @@
             @extend %inline-icon.active;
         }
 */
+/*------------------------------------*
+ *  # Constants
+ *------------------------------------*/
+/* stylelint-disable color-no-hex */
+/* COLOR PALETTE */
 :root {
   --text-size-xxs: 1.2rem;
   --text-size-xs: 1.4rem;
@@ -4109,20 +4824,20 @@
   --brand-secondary: #85acb0; }
 
 :root .theme--light {
-  --general-main-1: #fff;
-  --general-main-2: #fff;
+  --general-main-1: #ffffff;
+  --general-main-2: #ffffff;
   --general-section-1: #f2f3f4;
   --general-section-2: #f2f3f4;
   --general-disabled: #eaeced;
   --general-hover: #e6e9e9;
   --general-active: #d6dadb;
-  --text-prominent: #333;
-  --text-general: #333;
-  --text-less-prominent: #999;
+  --text-prominent: #333333;
+  --text-general: #333333;
+  --text-less-prominent: #999999;
   --text-disabled: #d6d6d6;
   --text-profit-success: #4bb4b3;
   --text-loss-danger: #ec3f3f;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #4bb4b3;
   --purchase-section-1: #3d9494;
   --purchase-main-2: #ec3f3f;
@@ -4130,24 +4845,24 @@
   --purchase-disabled-main: #eaeced;
   --purchase-disabled-section: #e6e9e9;
   --button-primary-default: var(--brand-red-coral);
-  --button-secondary-default: #999;
+  --button-secondary-default: #999999;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(255,255,255,0.960784);
-  --shadow-menu: rgba(0,0,0,0.160784);
-  --state-normal: #fff;
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #fffffff5;
+  --shadow-menu: #00000029;
+  --state-normal: #ffffff;
   --state-hover: #e6e9e9;
   --state-active: #d6dadb;
   --state-disabled: #eaeced;
   --border-normal: #d6dadb;
-  --border-hover: #999;
+  --border-hover: #999999;
   --border-active: var(--brand-secondary);
   --border-disabled: #eaeced;
-  --fill-normal: #fff;
-  --fill-hover: #999;
+  --fill-normal: #ffffff;
+  --fill-hover: #999999;
   --fill-active: var(--brand-secondary);
   --fill-disabled: #eaeced;
   --status-default: #eaeced;
@@ -4155,7 +4870,7 @@
   --status-success: #4bb4b3;
   --status-warning: #ffad3a;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#4bb4b3, 0.92); }
 
 :root .theme--dark {
@@ -4166,13 +4881,13 @@
   --general-disabled: #1d1f20;
   --general-hover: #242828;
   --general-active: #323738;
-  --text-prominent: #fff;
+  --text-prominent: #ffffff;
   --text-general: #c2c2c2;
   --text-less-prominent: #6e6e6e;
   --text-disabled: #3e3e3e;
   --text-profit-success: #00a79e;
   --text-loss-danger: #cc2e3d;
-  --text-colored-background: #fff;
+  --text-colored-background: #ffffff;
   --purchase-main-1: #00a79e;
   --purchase-section-1: #008079;
   --purchase-main-2: #cc2e3d;
@@ -4183,11 +4898,11 @@
   --button-secondary-default: #6e6e6e;
   --button-tertiary-default: transparent;
   --button-primary-hover: #eb3e48;
-  --button-secondary-hover: rgba(0,0,0,0.0784314);
-  --button-tertiary-hover: rgba(255,68,79,0.0784314);
-  --overlay-outside-dialog: rgba(0,0,0,0.721569);
-  --overlay-inside-dialog: rgba(14,14,14,0.960784);
-  --shadow-menu: rgba(0,0,0,0.301961);
+  --button-secondary-hover: #00000014;
+  --button-tertiary-hover: #ff444f14;
+  --overlay-outside-dialog: #000000b8;
+  --overlay-inside-dialog: #0e0e0ef5;
+  --shadow-menu: #0000004d;
   --state-normal: #0e0e0e;
   --state-hover: #242828;
   --state-active: #323738;
@@ -4205,9 +4920,118 @@
   --status-warning: #ffad3a;
   --status-success: #00a79e;
   --status-info: #377cfc;
-  --status-colored-background: #fff;
+  --status-colored-background: #ffffff;
   --transparent-success: transparentize(#00a79e, 0.92); }
 
+/* Preserve legacy variables */
+/* Primary */
+/* stylelint-enable color-no-hex */
+/*------------------------------------*
+ *  # SASS Mixins and Functions
+ *------------------------------------*/
+/*
+ * SASS interpolation
+ */
+/*
+ * PX to EM
+ * @param $px - px value to be converted
+ * @param $base - base font size (in `em`)
+ * Note: 'em' values are calculate based on the element font-size
+ *       to properly converts 'px' to 'em', please pass in the element font-size with it
+ * Usage example:
+    padding: em(16px, 1.6em); // font-size in 'em'
+ */
+/*
+ * Set property by passing a property name, and values.
+ * @param $property name - padding, margin etc.
+ * @param $values        - values in `px` (space separated for multiple values)
+ * @param $font-size     - base font-size in `em`
+ * Usage example:
+   @include toEm(padding, 8px 16px 8px, 1.6em);
+ */
+/*
+ * Generate typefaces key-value pair of variable name and config
+ * Example:
+   --paragraph-center-bold-black: (14px, center, bold, black)
+ */
+/*
+ * Sets font-size, font-weight, color, text-transform, text-align and line-height
+ * Usage example:
+   @include setTypeface(16px, bold, black, uppercase);
+ */
+/*
+ * Set typefaces by passing a typeface variable name
+ * @param $var   - typeface variable
+ * @param $tt    - text-transform property
+ * @param $align - text-align property
+ * Usage example:
+   @include typeface(--paragraph-bold-black, uppercase, center);
+ */
+/*
+ * Range Slider Thumb styling is set here
+ */
+/*
+ * SVG icons colors
+ */
+/*
+ * Bar Spinner Animation
+ * @param $count    - number of bars
+ * @param $duration - duration of animation
+ * @param $phase    - each bar phase change delay
+ * Usage example:
+   @include createBarspinnerAnimation(5, 1.2s, 0,1);
+ */
+/*
+ * Implementation of themes
+ * generate sets of themes keys object property (dark / light)
+ * @param $themes - themes property
+ * Usage example:
+   @include themify($themes) { color: themed('background_color') }
+ */
+/*
+ * Generate typefaces key-value pair of themefy object
+ * Should be inside themify mixins
+ * Example:
+   @include themify($themes) { border-color: 1px solid themed('background_color') }
+ */
+/*
+ * Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Themified Tooltip colors
+ * @param $color - color property
+ * Usage example:
+   @include tooltipColor($COLOR_RED);
+ */
+/*
+ * Convert Tooltip colors
+ * @param $color - css color property
+ * Usage example:
+   @include convertTooltipColor(var(--status-default));
+ */
+/*
+    Constants
+*/
+/*
+    Variables
+*/
+/*
+    List of all typefaces variables in the format: --$FONT_SIZES-$TEXT_ALIGN-$FONT_WEIGHTS-COLORS.
+    See $FONT_SIZES, $TEXT_ALIGN, $FONT_WEIGHTS, $COLORS maps above for references.
+    Variables name example: --title-center-semibold-red
+ */
+/*
+    to use styles without modifier class on .inline-icon
+    use @extend
+
+    e.g. style icon on parent hover:
+        a:hover .inline-icon {
+            @extend %inline-icon.active;
+        }
+*/
 .dc-tabs {
   position: relative; }
 
@@ -4259,6 +5083,7 @@
   width: var(--tab-width);
   height: 2px;
   background: #ff444f;
+  /* stylelint-disable-line color-no-hex */
   transition: all ease-in-out 0.3s; }
 
 /*------------------------------------*
@@ -4727,3 +5552,5 @@
         }
 */
 
+
+/*# sourceMappingURL=bot.css.map*/
