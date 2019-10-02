@@ -773,7 +773,7 @@
   outline: none; }
 
 .dc-input__field:focus ~ label, .dc-input__field:disabled ~ label, .dc-input__field:not(:focus):valid ~ label {
-  transform: translate(0, -1.6rem) scale(0.75);
+  transform: translate(0, -1.8rem) scale(0.75);
   padding: 0 4px; }
 
 .dc-input__field:disabled {
@@ -814,6 +814,14 @@
   -webkit-appearance: none;
   margin: 0; }
 
+.dc-input__field[type=textarea] {
+  height: 9.6rem;
+  border: none;
+  resize: none; }
+
+.dc-input__field[type=textarea] ~ .dc-field-error {
+  top: 10rem; }
+
 .dc-input__leading-icon {
   margin-left: 1rem;
   top: 1rem;
@@ -838,7 +846,7 @@
   position: absolute;
   pointer-events: none;
   left: 1rem;
-  top: 1rem;
+  top: 1.3rem;
   transition: 0.25s ease all;
   transform-origin: top left; }
 

@@ -1761,7 +1761,7 @@
   outline: none; }
 
 .dc-input__field:focus ~ label, .dc-input__field:disabled ~ label, .dc-input__field:not(:focus):valid ~ label {
-  transform: translate(0, -1.6rem) scale(0.75);
+  transform: translate(0, -1.8rem) scale(0.75);
   padding: 0 4px; }
 
 .dc-input__field:disabled {
@@ -1789,6 +1789,14 @@
   -webkit-appearance: none;
   margin: 0; }
 
+.dc-input__field[type=textarea] {
+  height: 9.6rem;
+  border: none;
+  resize: none; }
+
+.dc-input__field[type=textarea] ~ .dc-field-error {
+  top: 10rem; }
+
 .dc-input__leading-icon {
   margin-left: 1rem;
   top: 1rem;
@@ -1811,7 +1819,7 @@
   position: absolute;
   pointer-events: none;
   left: 1rem;
-  top: 1rem;
+  top: 1.3rem;
   transition: 0.25s ease all;
   transform-origin: top left; }
 
@@ -3563,20 +3571,18 @@
             @extend %inline-icon.active;
         }
 */
-.dc-modal__container {
-  width: 384px; }
-  .dc-modal__container_modal--saveload {
-    width: 450px; }
-    .dc-modal__container_modal--saveload .modal__content {
-      padding: 24px; }
-    .dc-modal__container_modal--saveload .modal__footer {
-      text-align: right; }
-    .dc-modal__container_modal--saveload .modal__content-row {
-      padding: 21px 21px 35px; }
+.dc-modal__container_modal--saveload {
+  width: 450px; }
+  .dc-modal__container_modal--saveload .modal__content {
+    padding: 24px; }
+  .dc-modal__container_modal--saveload .modal__footer {
+    text-align: right; }
+  .dc-modal__container_modal--saveload .modal__content-row {
+    padding: 21px 21px 35px; }
 
 .radio-group__saveload-type {
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: space-around; }
   .radio-group__saveload-type .dc-radio-group__item {
     display: flex;
     flex-direction: column;
@@ -4113,11 +4119,11 @@
       margin: 0 4px;
       height: calc(56px - 18px); }
     .toolbar__section > .toolbar__form .dc-input {
-      margin-bottom: 5px; }
+      margin-bottom: 0; }
   .toolbar__icon {
     cursor: pointer;
     border: none;
-    margin: 12px;
+    margin: 0 12px;
     height: 15px;
     width: 15px; }
   .toolbar__group {
@@ -4125,15 +4131,13 @@
     border-radius: 4px;
     border: solid 1px var(--border-normal); }
     .toolbar__group-btn {
-      padding: 0px 8px; }
+      padding: 0px 8px;
+      height: 40px; }
       .toolbar__group-btn > * {
         align-self: center; }
   .toolbar__form {
     width: 18%;
     min-width: 160px; }
-    .toolbar__form-field {
-      margin-bottom: 0;
-      margin-top: 0.5em; }
 
 .vertical-divider {
   width: 1px;
