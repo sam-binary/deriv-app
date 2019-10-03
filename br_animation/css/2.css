@@ -603,6 +603,9 @@
 .dc-dropdown__display--has-symbol {
   justify-content: unset; }
 
+.dc-dropdown__display--no-symbol .dc-dropdown__display-text {
+  padding: unset; }
+
 .dc-dropdown__display--no-border {
   border-color: var(--fill-normal); }
 
@@ -994,8 +997,8 @@
   overflow-y: auto;
   z-index: 2;
   border-radius: 4px;
-  box-shadow: 0 2px 8px 0 var(--shadow-menu);
-  background: var(--state-normal); }
+  box-shadow: 0 8px 16px 0 var(--shadow-menu);
+  background: var(--general-main-2); }
 
 .dc-list--left {
   width: unset; }
