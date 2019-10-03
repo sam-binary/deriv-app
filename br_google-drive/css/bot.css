@@ -3841,8 +3841,6 @@
 .saveload-type__checkbox-text {
   font-size: 14px;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 1.43;
   letter-spacing: normal;
   color: var(--text-prominent); }
@@ -3850,8 +3848,6 @@
 .saveload-type__checkbox-description {
   font-size: 14px;
   font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 1.43;
   letter-spacing: normal;
   color: var(--text-prominent);
@@ -3864,11 +3860,9 @@
   text-align: center; }
 
 .saveload-type__radio-text {
-  margin-top: 8px;
   font-size: 14px;
   font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
+  margin-top: 8px;
   line-height: 1.43;
   letter-spacing: normal;
   color: var(--text-prominent); }
@@ -5431,7 +5425,7 @@
 .bot-dialog__content {
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 12px;
   padding: 16px; }
 
 .bot-dialog__header {
@@ -5445,7 +5439,7 @@
 
 .bot-dialog__ok-button {
   width: 96px;
-  align-self: center; }
+  align-self: flex-end; }
 
 /*------------------------------------*
  *  # Constants
