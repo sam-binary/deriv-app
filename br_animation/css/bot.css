@@ -3116,6 +3116,15 @@
   display: flex;
   justify-content: center; }
 
+.saveload-type__checkbox-text {
+  font-size: 14px;
+  font-weight: bold; }
+
+.saveload-type__checkbox-description {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-left: 25px; }
+
 /*------------------------------------*
  *  # Constants
  *------------------------------------*/
@@ -3615,13 +3624,13 @@
   0% {
     width: 0%; }
   100% {
-    width: calc(50% - 3.5px); } }
+    width: 50%; } }
 
 @keyframes animate-progress-complete {
   0% {
     width: 50%; }
   100% {
-    width: calc(100% - 5px); } }
+    width: 100%; } }
 
 @keyframes animate-circle {
   0% {
@@ -5287,7 +5296,7 @@
 .bot-dialog__content {
   display: flex;
   flex-direction: column;
-  font-size: 16px;
+  font-size: 14px;
   padding: 16px; }
 
 .bot-dialog__header {
