@@ -5144,7 +5144,8 @@
         }
 */
 .dc-tabs {
-  position: relative; }
+  position: relative;
+  height: 100%; }
 
 .dc-tabs .dc-tabs__item:nth-child(1).dc-tabs__active ~ .dc-tabs__active-line {
   left: calc(var(--tab-width) * 1 - var(--tab-width)); }
@@ -5160,6 +5161,9 @@
 
 .dc-tabs .dc-tabs__item:nth-child(5).dc-tabs__active ~ .dc-tabs__active-line {
   left: calc(var(--tab-width) * 5 - var(--tab-width)); }
+
+.dc-tabs__content {
+  height: calc(100% - 40px); }
 
 .dc-tabs__list {
   width: 100%;
