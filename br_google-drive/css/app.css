@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese);
 /*------------------------------------*
  *  # Constants
  *------------------------------------*/
@@ -2348,7 +2348,8 @@ html {
   text-decoration: none; }
 
 .btn--primary--default {
-  background: var(--button-primary-default); }
+  background: var(--button-primary-default);
+  color: var(--text-colored-background); }
 
 .btn--primary--default:hover:not([disabled]) {
   background: var(--button-primary-hover); }
@@ -2361,7 +2362,7 @@ html {
   cursor: not-allowed !important; }
 
 .btn--primary--default .btn__text {
-  color: #ffffff; }
+  color: var(--text-colored-background); }
 
 .btn--primary .btn__text {
   color: #ffffff; }
@@ -2555,7 +2556,8 @@ html {
   bottom: -0.1em;
   right: -0.1em;
   border-radius: inherit;
-  border: 0 solid #2a3052;
+  border: 0 solid #85acb0;
+  border: 0 solid var(--brand-secondary);
   opacity: 0.4;
   -webkit-animation: buttonEffect 0.4s;
           animation: buttonEffect 0.4s;
@@ -2569,10 +2571,14 @@ html {
   /* postcss-bem-linter: ignore */ }
 
 .btn .initial-loader--btn .initial-loader__barspinner--rect {
-  background-color: #ffffff; }
+  background-color: var(--text-colored-background); }
 
 .btn .initial-loader--btn .barspinner {
-  margin: 0 4px 0 -4px; }
+  margin: 0.6rem 4px 0 -4px;
+  /* postcss-bem-linter: ignore */ }
+
+.btn .initial-loader--btn .barspinner__rect {
+  height: 35%; }
 
 @-webkit-keyframes buttonEffect {
   to {
@@ -5380,14 +5386,11 @@ table {
 .send-email-template {
   padding: 0 16px; }
   .send-email-template__title {
+    color: var(--text-general);
     font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 0.8rem;
     line-height: 1.5; }
-    .theme--light .send-email-template__title {
-      color: rgba(0, 0, 0, 0.8); }
-    .theme--dark .send-email-template__title {
-      color: #7f8397; }
   .send-email-template__subtitle {
     font-size: 1.4rem;
     margin-bottom: 1.6rem; }
@@ -5710,11 +5713,8 @@ table {
     font-size: 1rem;
     align-self: flex-start;
     text-transform: none;
-    margin-bottom: 4px; }
-    .theme--light .contract-card .purchase-price__label, .theme--light .contract-card .potential-payout__label {
-      color: rgba(0, 0, 0, 0.8); }
-    .theme--dark .contract-card .purchase-price__label, .theme--dark .contract-card .potential-payout__label {
-      color: #7f8397; }
+    margin-bottom: 4px;
+    color: var(--text-general); }
   .contract-card .purchase-price__value, .contract-card .potential-payout__value {
     font-size: 1em;
     font-weight: bold;
