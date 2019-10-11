@@ -63,7 +63,7 @@
         <field name="CURRENCY_LIST">USD</field>
         <value name="DURATION">
           <shadow type="math_number" id="U0Z*M,J@5n%2!YcjTbSU">
-            <field name="NUM"></field>
+            <field name="NUM">5</field>
           </shadow>
         </value>
         <value name="AMOUNT">
