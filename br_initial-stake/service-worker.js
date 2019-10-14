@@ -15,7 +15,7 @@ importScripts("/br_initial-stake/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/br_initial-stake/workbox-v4.3.1"});
 
 importScripts(
-  "/br_initial-stake/precache-manifest.80815b2c55cde0be20eef70793fc80e7.js"
+  "/br_initial-stake/precache-manifest.af13783f76765923fcef77e21023a8d7.js"
 );
 
 workbox.core.skipWaiting();
