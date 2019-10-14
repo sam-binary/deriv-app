@@ -629,6 +629,12 @@
 .dc-input__trailing-icon {
   margin: 0 1.2rem 0 0 !important; }
 
+.dc-input__trailing-icon .color1-fill {
+  fill: var(--text-less-prominent); }
+
+.dc-input__trailing-icon .color1-stroke {
+  fill: var(--text-less-prominent); }
+
 .dc-input__label {
   color: var(--text-less-prominent);
   font-size: 1.4rem;
@@ -1421,7 +1427,8 @@ html {
   font-weight: bold;
   text-decoration: none; }
   .link:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    cursor: pointer; }
   .link--white {
     color: #ffffff; }
 
