@@ -15,7 +15,7 @@ importScripts("/br_quick-strategy/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/br_quick-strategy/workbox-v4.3.1"});
 
 importScripts(
-  "/br_quick-strategy/precache-manifest.83f940f91109658066daec7ac268f79f.js"
+  "/br_quick-strategy/precache-manifest.cab8e48d886b5125eda8c6fc7b3b3cbc.js"
 );
 
 workbox.core.skipWaiting();
