@@ -15,7 +15,7 @@ importScripts("/br_check-root-blocks/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/br_check-root-blocks/workbox-v4.3.1"});
 
 importScripts(
-  "/br_check-root-blocks/precache-manifest.79779bba5e6352362f728c519d1f504a.js"
+  "/br_check-root-blocks/precache-manifest.540be169e5c0b6d45c526fc6ad32f29b.js"
 );
 
 workbox.core.skipWaiting();
