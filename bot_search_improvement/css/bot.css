@@ -1065,7 +1065,7 @@
   display: flex; }
 
 .bot-dialog__cancel {
-  margin-right: 1.6rem !important; }
+  margin: 1.6rem 1.6rem 0 0 !important; }
 
 .bot-dialog__ok {
   margin-top: 1.6rem; }
@@ -3680,8 +3680,8 @@
   margin-top: 20px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
   min-width: 400px; }
-  .flyout__item:hover .flyout__button-add-hide {
-    display: block;
+  .flyout__item:hover .flyout__button-add--hide {
+    display: flex !important;
     animation: animate-fade-in 0.3s; }
   .flyout__content {
     overflow: auto;
@@ -3689,43 +3689,32 @@
     height: calc(100% - 56px); }
   .flyout__block-workspace {
     margin-bottom: 15px; }
-  .flyout__button {
-    border: none;
-    border-radius: 4px;
-    padding: 5px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.43;
-    letter-spacing: normal;
-    text-align: center; }
-    .flyout__button-new {
-      width: 100%;
-      font-size: 100%;
-      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
-      margin: 15px 0; }
-    .flyout__button-add {
-      background-color: #ff444f;
-      color: var(--general-main-1); }
-      .flyout__button-add-hide {
-        display: none; }
-    .flyout__button-back {
-      padding: 0 15px;
-      align-self: center;
-      background-color: transparent;
-      color: #000000; }
-      .flyout__button-back svg {
-        vertical-align: middle; }
-      .flyout__button-back:focus {
-        outline: none; }
-    .flyout__button-next, .flyout__button-previous {
-      margin-left: 1em;
-      color: rgba(0, 0, 0, 0.8);
-      background-color: var(--general-section-1); }
-      .flyout__button-next:focus, .flyout__button-previous:focus {
-        outline: none; }
+  .flyout__button-new {
+    width: 100%;
+    font-size: 100%;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4);
+    margin: 15px 0;
+    background-color: var(--general-main-1); }
+  .flyout__button-add {
+    color: var(--general-main-1); }
+    .flyout__button-add--hide {
+      display: none !important; }
+  .flyout__button-back {
+    padding: 0 15px;
+    align-self: center;
+    background-color: transparent;
+    color: #000000; }
+    .flyout__button-back svg {
+      vertical-align: middle; }
+    .flyout__button-back:focus {
+      outline: none; }
+  .flyout__button-next, .flyout__button-previous {
+    margin-left: 1em;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: var(--general-section-1);
+    display: flex; }
+    .flyout__button-next:focus, .flyout__button-previous:focus {
+      outline: none; }
   .flyout__item {
     line-height: 1.3em;
     font-size: 14px; }
@@ -3770,7 +3759,7 @@
       padding: 1.5em;
       font-size: 0.8em;
       overflow-y: auto;
-      height: calc(100vh - 290px); }
+      height: calc(100vh - 295px); }
       .flyout__help-content .flyout__item {
         margin-bottom: 0.8em; }
     .flyout__help-title {
@@ -3778,7 +3767,8 @@
       font-size: 16px;
       font-weight: bold; }
     .flyout__help-footer {
-      text-align: right;
+      display: flex;
+      justify-content: flex-end;
       padding: 0.5em 0.8em;
       border-top: solid 0.1em var(--general-section-1); }
   .flyout__search {
@@ -3801,7 +3791,7 @@
       font-weight: bold; }
     .flyout__search .flyout__help-content {
       height: calc(100% - 60px); }
-  .flyout__normal .flyout__content {
+  .flyout__normal-content {
     height: 100%; }
 
 /*------------------------------------*
