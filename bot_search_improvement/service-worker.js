@@ -15,7 +15,7 @@ importScripts("/bot_search_improvement/workbox-v4.3.1/workbox-sw.js");
 workbox.setConfig({modulePathPrefix: "/bot_search_improvement/workbox-v4.3.1"});
 
 importScripts(
-  "/bot_search_improvement/precache-manifest.5f131e0bb2a1ec76138cd0b89c6d92cb.js"
+  "/bot_search_improvement/precache-manifest.ddc267e0926b2434d20ae4fef616a389.js"
 );
 
 workbox.core.skipWaiting();
