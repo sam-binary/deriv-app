@@ -251,8 +251,8 @@
   transform: translateY(-65%); }
 
 .dc-popover__bubble {
-  font-size: 1.2em;
-  color: #fff;
+  font-size: 1.2rem;
+  color: var(--text-colored-background);
   font-weight: 400;
   text-transform: none;
   text-align: center;
@@ -466,8 +466,8 @@
   border-bottom: 1px solid var(--general-section-1); }
 
 .dc-modal-header__title {
-  font-size: 1.6em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.6rem;
+  color: var(--text-general);
   font-weight: 700;
   text-transform: capitalize;
   text-align: left;
@@ -778,8 +778,8 @@ html {
   height: 24px; }
 
 .settings-language__language-name {
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: capitalize;
   text-align: left;
@@ -973,8 +973,8 @@ html {
 .initial-loader__text {
   line-height: 44px;
   color: var(--text-prominent);
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: none;
   text-align: center;
@@ -999,8 +999,8 @@ html {
   text-transform: none !important; }
 
 .btn__text, .btn__icon {
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  color: var(--text-general);
   font-weight: 700;
   text-transform: unset;
   text-align: center;
@@ -1743,8 +1743,8 @@ html {
     height: 3.2rem;
     margin-right: -0.1rem; }
   .acc-info__balance {
-    font-size: 1.6em;
-    color: #39b19d;
+    font-size: 1.6rem;
+    color: var(--text-profit-success);
     font-weight: 700;
     text-transform: default;
     text-align: center;
@@ -1825,8 +1825,8 @@ html {
   padding: 1.6em 0.8em;
   background: var(--general-main-2); }
   .acc-switcher__list-title {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: capitalize;
     text-align: left;
@@ -1869,8 +1869,8 @@ html {
   position: relative;
   background: var(--general-main-2); }
   .acc-switcher__account .acc-switcher__id {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: capitalize;
     text-align: left;
@@ -1886,8 +1886,8 @@ html {
     background: var(--state-active);
     border-radius: 4px; }
     .acc-switcher__account--selected .acc-switcher__id {
-      font-size: 1.4em;
-      color: #ffffff;
+      font-size: 1.4rem;
+      color: var(--text-colored-background);
       font-weight: 700;
       text-transform: capitalize;
       text-align: left;
@@ -1904,8 +1904,8 @@ html {
   justify-content: flex-end;
   margin-top: 1.6em; }
   .acc-switcher__logout-text {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: none;
     text-align: left;
@@ -1942,8 +1942,8 @@ html {
 
 /** @define no-currency; weak */
 .no-currency {
-  font-size: 0.8em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 0.8rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: capitalize;
   text-align: center;
@@ -2412,8 +2412,8 @@ html {
 .initial-loader__text {
   line-height: 44px;
   color: var(--text-prominent);
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: none;
   text-align: center;
@@ -2573,8 +2573,8 @@ html {
   transform: translateY(-65%); }
 
 .dc-popover__bubble {
-  font-size: 1.2em;
-  color: #fff;
+  font-size: 1.2rem;
+  color: var(--text-colored-background);
   font-weight: 400;
   text-transform: none;
   text-align: center;
@@ -2738,8 +2738,8 @@ html {
 .dc-dropdown__display-text {
   padding-left: 1em;
   padding-right: 2.5em;
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: capitalize;
   text-align: center;
@@ -2821,8 +2821,8 @@ html {
   transition: transform 0.2s ease;
   transform: rotate(0deg);
   transform-origin: 50% 45%;
-  font-size: 1.6em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.6rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: none;
   text-align: center;
@@ -2961,8 +2961,8 @@ html {
   cursor: pointer; }
 
 .dc-list__item-text, .dc-list__item-symbol {
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: capitalize;
   text-align: left;
@@ -2985,8 +2985,8 @@ html {
   color: var(--text-general); }
 
 .dc-list__item--selected .dc-list__item-text, .dc-list__item--selected .dc-list__item-symbol, .dc-list__item--selected .dc-list__item-tooltip {
-  font-size: 1.4em;
-  color: #fff;
+  font-size: 1.4rem;
+  color: var(--text-colored-background);
   font-weight: 700;
   text-transform: capitalize;
   text-align: left;
@@ -3004,8 +3004,8 @@ html {
   cursor: default; }
 
 .dc-list__item-symbol {
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: capitalize;
   text-align: left;
@@ -3583,8 +3583,8 @@ html {
     .currency-list__item--selected {
       border: 2px solid var(--border-active); }
       .currency-list__item--selected p.label {
-        font-size: 1.4em;
-        color: rgba(0, 0, 0, 0.8);
+        font-size: 1.4rem;
+        color: var(--text-general);
         font-weight: 700;
         text-transform: capitalize;
         text-align: center;
@@ -3601,8 +3601,8 @@ html {
       margin-bottom: 1em; }
     .currency-list__item p {
       text-align: center;
-      font-size: 1.4em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.4rem;
+      color: var(--text-general);
       font-weight: 400;
       text-transform: capitalize;
       text-align: center;
@@ -3872,8 +3872,8 @@ html {
       .details-form__elements .dc-dropdown__display-placeholder-text {
         background-color: var(--general-main-2); }
   .details-form__description {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: capitalize;
     text-align: center;
@@ -4238,8 +4238,8 @@ html {
   flex-grow: 1;
   margin: 0 8rem; }
   .terms-of-use .dc-checkbox__label {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: capitalize;
     text-align: left;
@@ -4249,8 +4249,8 @@ html {
   .terms-of-use__checkbox {
     margin-top: 2rem; }
   .terms-of-use h4 {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: capitalize;
     text-align: left;
@@ -4259,8 +4259,8 @@ html {
     text-transform: none;
     color: var(--text-general); }
   .terms-of-use p {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: capitalize;
     text-align: left;
@@ -4539,8 +4539,8 @@ html {
   .success-change__body-area {
     flex-grow: 1; }
     .success-change__body-area h2 {
-      font-size: 1.6em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.6rem;
+      color: var(--text-general);
       font-weight: 700;
       text-transform: capitalize;
       text-align: center;
@@ -4548,8 +4548,8 @@ html {
       margin-top: 2rem;
       color: var(--text-general); }
     .success-change__body-area p {
-      font-size: 1.4em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.4rem;
+      color: var(--text-general);
       font-weight: 400;
       text-transform: capitalize;
       text-align: left;
@@ -4952,8 +4952,8 @@ html {
   .initial-loader__text {
     line-height: 44px;
     color: var(--text-prominent);
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: none;
     text-align: center;
@@ -5084,8 +5084,8 @@ html {
   /* TODO: confirm this button with designer are we still using this? */
   /* postcss-bem-linter: ignore */ }
   .btn__text, .btn__icon {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: unset;
     text-align: center;
@@ -5434,8 +5434,8 @@ html {
     align-self: center;
     margin: 2em 0 0; }
   .dc-modal__container_real-account-signup-modal--error h1 {
-    font-size: 1.6em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.6rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: capitalize;
     text-align: center;
@@ -5444,8 +5444,8 @@ html {
     color: var(--text-general);
     margin: 2em 0 1em; }
   .dc-modal__container_real-account-signup-modal--error p {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: capitalize;
     text-align: center;
@@ -5453,8 +5453,8 @@ html {
     text-transform: none;
     color: var(--text-prominent); }
   .dc-modal__container_real-account-signup-modal--error a {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: capitalize;
     text-align: center;
@@ -5477,8 +5477,8 @@ html {
   flex-grow: 1;
   width: 100%; }
   .account-wizard h1 {
-    font-size: 1.6em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.6rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: capitalize;
     text-align: center;
@@ -5487,8 +5487,8 @@ html {
     text-transform: none;
     margin-top: 3rem; }
   .account-wizard h2 {
-    font-size: 1.6em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.6rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: capitalize;
     text-align: center;
@@ -5497,8 +5497,8 @@ html {
     margin-top: 2rem;
     color: var(--text-less-prominent); }
   .account-wizard h3 {
-    font-size: 1.2em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.2rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: capitalize;
     text-align: center;
@@ -5522,8 +5522,8 @@ html {
     width: 100%; }
   .account-wizard__set-currency p {
     margin-top: 1em;
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: capitalize;
     text-align: center;
@@ -5531,8 +5531,8 @@ html {
     text-transform: initial;
     color: var(--text-prominent); }
   .account-wizard__set-currency h2 {
-    font-size: 1.6em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.6rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: capitalize;
     text-align: center;
@@ -5559,8 +5559,8 @@ html {
       .account-wizard__btn-area--center .btn {
         min-width: 9em; }
     .account-wizard__btn-area--error {
-      font-size: 1.4em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.4rem;
+      color: var(--text-general);
       font-weight: 400;
       text-transform: capitalize;
       text-align: left;
@@ -5576,8 +5576,8 @@ html {
       font-size: 1.3rem;
       line-height: 20px; }
     .account-wizard .checkbox__label {
-      font-size: 1.4em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.4rem;
+      color: var(--text-general);
       font-weight: 400;
       text-transform: capitalize;
       text-align: left;
@@ -5813,8 +5813,8 @@ html {
     margin: 0 -24px;
     padding-bottom: 20px; }
     .form-progress__header h2 {
-      font-size: 1.4em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.4rem;
+      color: var(--text-general);
       font-weight: 700;
       text-transform: capitalize;
       text-align: center;
@@ -5836,8 +5836,8 @@ html {
       border-radius: 50%;
       display: block;
       width: 24px;
-      font-size: 1.4em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.4rem;
+      color: var(--text-general);
       font-weight: 700;
       text-transform: capitalize;
       text-align: center;
@@ -5846,8 +5846,8 @@ html {
       border: 1px solid var(--text-less-prominent);
       color: var(--text-colored-background); }
     .form-progress__step--active .identifier {
-      font-size: 1.4em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.4rem;
+      color: var(--text-general);
       font-weight: 700;
       text-transform: capitalize;
       text-align: center;
@@ -6644,8 +6644,8 @@ table {
       transform: translate(-50%, 1em);
       transform-origin: top; }
     .tooltip[data-tooltip]:before {
-      font-size: 1.2em;
-      color: #ffffff;
+      font-size: 1.2rem;
+      color: var(--text-colored-background);
       font-weight: 400;
       text-transform: none;
       text-align: left;
@@ -6804,8 +6804,8 @@ table {
   .initial-loader__text {
     line-height: 44px;
     color: var(--text-prominent);
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: none;
     text-align: center;
@@ -7245,8 +7245,8 @@ table {
     transition: background-color 0.3s;
     cursor: pointer; }
     .header__menu-link-text {
-      font-size: 1.6em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.6rem;
+      color: var(--text-general);
       font-weight: 400;
       text-transform: capitalize;
       text-align: left;
@@ -7451,8 +7451,8 @@ table {
   align-self: center;
   margin-right: 1em;
   padding: 0 1em;
-  font-size: 1.2em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.2rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: capitalize;
   text-align: left;
@@ -7626,8 +7626,8 @@ table {
           top: 1.4em;
           right: 1em; }
       .drawer--right .drawer__header .drawer__notifications {
-        font-size: 1.6em;
-        color: rgba(0, 0, 0, 0.8);
+        font-size: 1.6rem;
+        color: var(--text-general);
         font-weight: 400;
         text-transform: capitalize;
         text-align: left;
@@ -7655,8 +7655,8 @@ table {
             height: 1.6em;
             transform: scale(6, 6); }
         .drawer--right .drawer__no-notifications-container .drawer__no-notifications-header {
-          font-size: 1.4em;
-          color: rgba(0, 0, 0, 0.8);
+          font-size: 1.4rem;
+          color: var(--text-general);
           font-weight: 400;
           text-transform: capitalize;
           text-align: center;
@@ -7784,8 +7784,8 @@ table {
     align-items: center;
     padding: 0.5em;
     margin-left: -8px;
-    font-size: 1.6em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.6rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: capitalize;
     text-align: left;
@@ -7901,8 +7901,8 @@ table {
     margin-bottom: 0.5em;
     padding: 0 4px; }
     .contract-card__footer-wrapper {
-      font-size: 1.2em;
-      color: rgba(0, 0, 0, 0.8);
+      font-size: 1.2rem;
+      color: var(--text-general);
       font-weight: 400;
       text-transform: capitalize;
       text-align: center;
@@ -8503,8 +8503,8 @@ table {
 .media {
   margin: 0 0 24px; }
   .media__heading {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: capitalize;
     text-align: left;
@@ -8523,8 +8523,8 @@ table {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 400;
     text-transform: capitalize;
     text-align: left;
@@ -8670,8 +8670,8 @@ table {
     border-radius: 4px 0 0 4px;
     background-color: var(--general-section-1); }
   .vertical-tab__header-title {
-    font-size: 1.6em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.6rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: none;
     text-align: center;
@@ -8684,8 +8684,8 @@ table {
     transition: background-color 0.1s ease-in;
     text-decoration: none; }
   .vertical-tab__header {
-    font-size: 1.4em;
-    color: rgba(0, 0, 0, 0.8);
+    font-size: 1.4rem;
+    color: var(--text-general);
     font-weight: 700;
     text-transform: none;
     text-align: center;
@@ -8701,8 +8701,8 @@ table {
     .vertical-tab__header:hover:not(.vertical-tab__header--active) {
       background-color: var(--state-hover); }
     .vertical-tab__header--active {
-      font-size: 1.4em;
-      color: #ffffff;
+      font-size: 1.4rem;
+      color: var(--text-colored-background);
       font-weight: 700;
       text-transform: none;
       text-align: left;
@@ -8742,8 +8742,8 @@ table {
 
 /** @define .wallet-information; weak; */
 .account-wallet {
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: capitalize;
   text-align: left;
@@ -9363,8 +9363,8 @@ table {
     margin: 0 auto; }
 
 .page-error__header {
-  font-size: 3em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 3rem;
+  color: var(--text-general);
   font-weight: 700;
   text-transform: none;
   text-align: center;
@@ -9373,8 +9373,8 @@ table {
   line-height: 44px; }
 
 .page-error__message {
-  font-size: 1.4em;
-  color: rgba(0, 0, 0, 0.8);
+  font-size: 1.4rem;
+  color: var(--text-general);
   font-weight: 400;
   text-transform: none;
   text-align: center;
