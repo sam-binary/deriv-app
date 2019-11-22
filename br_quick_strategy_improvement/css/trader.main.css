@@ -535,7 +535,7 @@ html {
       font-size: 1.4rem;
       color: var(--text-general);
       font-weight: 700;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: center;
       line-height: 1.5;
       width: 40px;
@@ -583,7 +583,7 @@ html {
         font-size: 1.4rem;
         color: var(--text-general);
         font-weight: 700;
-        text-transform: capitalize;
+        text-transform: none;
         text-align: center;
         line-height: 1.5;
         color: var(--text-general); }
@@ -591,7 +591,7 @@ html {
         font-size: 1.4rem;
         color: var(--text-general);
         font-weight: 700;
-        text-transform: capitalize;
+        text-transform: none;
         text-align: center;
         line-height: 1.5;
         padding: 0 4px;
@@ -812,18 +812,18 @@ html {
     fill: none; }
   .advanced-simple-toggle__icon .color2-stroke, .footer__link:hover .footer__icon .color2-stroke, .footer__icon .color2-stroke, .contract-drawer svg .color2-stroke, .positions-drawer__icon-close svg .color2-stroke, .input-wrapper__icon .color2-stroke, .time-picker__icon .color2-stroke, .account-settings-toggle svg .color2-stroke, .contract-type-widget__select-arrow .color2-stroke, .trade-type-info-dialog__header svg .color2-stroke, .trade-type-info-navigation__icon .color2-stroke, .side-menu__icon .color2-stroke, .info-box-container .info-box-longcode-icon .color2-stroke {
     stroke: none; }
-  .active.advanced-simple-toggle__icon, .header__menu-link--active .header__icon, .footer__link:hover .active.footer__icon, .active.footer__icon, .ic-settings--active .ic-settings__icon, .contract-drawer svg.active, .positions-drawer__icon-close svg.active, .active.input-wrapper__icon, .active.time-picker__icon, .account-settings-toggle svg.active, .account-settings-toggle:hover svg, .active.contract-type-widget__select-arrow, .trade-type-info-dialog__header svg.active, .active.trade-type-info-navigation__icon, .active.side-menu__icon, .info-box-container .active.info-box-longcode-icon {
+  .active.advanced-simple-toggle__icon, .footer__link:hover .active.footer__icon, .active.footer__icon, .ic-settings--active .ic-settings__icon, .contract-drawer svg.active, .positions-drawer__icon-close svg.active, .active.input-wrapper__icon, .active.time-picker__icon, .account-settings-toggle svg.active, .account-settings-toggle:hover svg, .active.contract-type-widget__select-arrow, .trade-type-info-dialog__header svg.active, .active.trade-type-info-navigation__icon, .active.side-menu__icon, .info-box-container .active.info-box-longcode-icon {
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */ }
-    .active.advanced-simple-toggle__icon .color1-fill, .header__menu-link--active .header__icon .color1-fill, .active.footer__icon .color1-fill, .ic-settings--active .ic-settings__icon .color1-fill, .contract-drawer svg.active .color1-fill, .positions-drawer__icon-close svg.active .color1-fill, .active.input-wrapper__icon .color1-fill, .active.time-picker__icon .color1-fill, .account-settings-toggle svg.active .color1-fill, .account-settings-toggle:hover svg .color1-fill, .active.contract-type-widget__select-arrow .color1-fill, .trade-type-info-dialog__header svg.active .color1-fill, .active.trade-type-info-navigation__icon .color1-fill, .active.side-menu__icon .color1-fill, .info-box-container .active.info-box-longcode-icon .color1-fill {
+    .active.advanced-simple-toggle__icon .color1-fill, .active.footer__icon .color1-fill, .ic-settings--active .ic-settings__icon .color1-fill, .contract-drawer svg.active .color1-fill, .positions-drawer__icon-close svg.active .color1-fill, .active.input-wrapper__icon .color1-fill, .active.time-picker__icon .color1-fill, .account-settings-toggle svg.active .color1-fill, .account-settings-toggle:hover svg .color1-fill, .active.contract-type-widget__select-arrow .color1-fill, .trade-type-info-dialog__header svg.active .color1-fill, .active.trade-type-info-navigation__icon .color1-fill, .active.side-menu__icon .color1-fill, .info-box-container .active.info-box-longcode-icon .color1-fill {
       fill: var(--text-prominent); }
-    .active.advanced-simple-toggle__icon .color1-stroke, .header__menu-link--active .header__icon .color1-stroke, .active.footer__icon .color1-stroke, .ic-settings--active .ic-settings__icon .color1-stroke, .contract-drawer svg.active .color1-stroke, .positions-drawer__icon-close svg.active .color1-stroke, .active.input-wrapper__icon .color1-stroke, .active.time-picker__icon .color1-stroke, .account-settings-toggle svg.active .color1-stroke, .account-settings-toggle:hover svg .color1-stroke, .active.contract-type-widget__select-arrow .color1-stroke, .trade-type-info-dialog__header svg.active .color1-stroke, .active.trade-type-info-navigation__icon .color1-stroke, .active.side-menu__icon .color1-stroke, .info-box-container .active.info-box-longcode-icon .color1-stroke {
+    .active.advanced-simple-toggle__icon .color1-stroke, .active.footer__icon .color1-stroke, .ic-settings--active .ic-settings__icon .color1-stroke, .contract-drawer svg.active .color1-stroke, .positions-drawer__icon-close svg.active .color1-stroke, .active.input-wrapper__icon .color1-stroke, .active.time-picker__icon .color1-stroke, .account-settings-toggle svg.active .color1-stroke, .account-settings-toggle:hover svg .color1-stroke, .active.contract-type-widget__select-arrow .color1-stroke, .trade-type-info-dialog__header svg.active .color1-stroke, .active.trade-type-info-navigation__icon .color1-stroke, .active.side-menu__icon .color1-stroke, .info-box-container .active.info-box-longcode-icon .color1-stroke {
       stroke: var(--text-prominent); }
-    .active.advanced-simple-toggle__icon .color2-fill, .header__menu-link--active .header__icon .color2-fill, .active.footer__icon .color2-fill, .ic-settings--active .ic-settings__icon .color2-fill, .contract-drawer svg.active .color2-fill, .positions-drawer__icon-close svg.active .color2-fill, .active.input-wrapper__icon .color2-fill, .active.time-picker__icon .color2-fill, .account-settings-toggle svg.active .color2-fill, .account-settings-toggle:hover svg .color2-fill, .active.contract-type-widget__select-arrow .color2-fill, .trade-type-info-dialog__header svg.active .color2-fill, .active.trade-type-info-navigation__icon .color2-fill, .active.side-menu__icon .color2-fill, .info-box-container .active.info-box-longcode-icon .color2-fill {
+    .active.advanced-simple-toggle__icon .color2-fill, .active.footer__icon .color2-fill, .ic-settings--active .ic-settings__icon .color2-fill, .contract-drawer svg.active .color2-fill, .positions-drawer__icon-close svg.active .color2-fill, .active.input-wrapper__icon .color2-fill, .active.time-picker__icon .color2-fill, .account-settings-toggle svg.active .color2-fill, .account-settings-toggle:hover svg .color2-fill, .active.contract-type-widget__select-arrow .color2-fill, .trade-type-info-dialog__header svg.active .color2-fill, .active.trade-type-info-navigation__icon .color2-fill, .active.side-menu__icon .color2-fill, .info-box-container .active.info-box-longcode-icon .color2-fill {
       fill: none; }
-    .active.advanced-simple-toggle__icon .color2-stroke, .header__menu-link--active .header__icon .color2-stroke, .active.footer__icon .color2-stroke, .ic-settings--active .ic-settings__icon .color2-stroke, .contract-drawer svg.active .color2-stroke, .positions-drawer__icon-close svg.active .color2-stroke, .active.input-wrapper__icon .color2-stroke, .active.time-picker__icon .color2-stroke, .account-settings-toggle svg.active .color2-stroke, .account-settings-toggle:hover svg .color2-stroke, .active.contract-type-widget__select-arrow .color2-stroke, .trade-type-info-dialog__header svg.active .color2-stroke, .active.trade-type-info-navigation__icon .color2-stroke, .active.side-menu__icon .color2-stroke, .info-box-container .active.info-box-longcode-icon .color2-stroke {
+    .active.advanced-simple-toggle__icon .color2-stroke, .active.footer__icon .color2-stroke, .ic-settings--active .ic-settings__icon .color2-stroke, .contract-drawer svg.active .color2-stroke, .positions-drawer__icon-close svg.active .color2-stroke, .active.input-wrapper__icon .color2-stroke, .active.time-picker__icon .color2-stroke, .account-settings-toggle svg.active .color2-stroke, .account-settings-toggle:hover svg .color2-stroke, .active.contract-type-widget__select-arrow .color2-stroke, .trade-type-info-dialog__header svg.active .color2-stroke, .active.trade-type-info-navigation__icon .color2-stroke, .active.side-menu__icon .color2-stroke, .info-box-container .active.info-box-longcode-icon .color2-stroke {
       stroke: none; }
   .disabled.advanced-simple-toggle__icon, .footer__link:hover .disabled.footer__icon, .disabled.footer__icon, .contract-drawer svg.disabled, .positions-drawer__icon-close svg.disabled, .disabled.input-wrapper__icon, .disabled.time-picker__icon, .account-settings-toggle svg.disabled, .disabled.contract-type-widget__select-arrow, .trade-type-info-dialog__header svg.disabled, .disabled.trade-type-info-navigation__icon, .disabled.side-menu__icon, .info-box-container .disabled.info-box-longcode-icon, .portfolio-empty__icon {
     /* postcss-bem-linter: ignore */
@@ -1978,146 +1978,6 @@ table {
   to {
     opacity: 1; } }
 
-/** @define header */
-.header {
-  position: fixed;
-  z-index: 99;
-  box-sizing: border-box;
-  height: 48px;
-  width: 100%;
-  top: 0;
-  transition: opacity 0.3s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  background-color: var(--general-main-1);
-  border-bottom: 1px solid var(--general-section-1); }
-  .header:after {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-    top: -1px;
-    left: 0;
-    width: 100%;
-    height: calc(100% + 2px);
-    content: '';
-    background-color: var(--overlay-outside-dialog); }
-  .header--is-disabled:after {
-    opacity: 1;
-    pointer-events: auto; }
-  .header__menu-items {
-    display: flex;
-    position: relative;
-    box-sizing: border-box;
-    align-items: center;
-    width: 100%;
-    height: 100%; }
-  .header__navbar-icons {
-    cursor: pointer;
-    padding: 0.8em 1.6em;
-    align-self: center;
-    height: 100%; }
-    .header__navbar-icons--notify-toggle {
-      order: 2;
-      order: 2;
-      padding: 0.5em 1em;
-      width: 2em; }
-  .header__menu-left {
-    justify-content: flex-start;
-    order: -1;
-    display: inline-flex;
-    flex: 1;
-    height: 47px; }
-  .header__menu-right {
-    justify-content: flex-end;
-    order: 1;
-    display: inline-flex;
-    height: 47px; }
-  .header__menu-toggle {
-    align-self: center;
-    display: flex; }
-  .header__menu-links {
-    height: 100%;
-    align-self: center; }
-    @media (max-width: 520px) {
-      .header__menu-links {
-        display: none; } }
-  .header__menu-link {
-    height: 100%;
-    padding: 0 1.6em;
-    text-decoration: none;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-evenly;
-    transition: background-color 0.3s;
-    cursor: pointer; }
-    .header__menu-link-text {
-      font-size: 1.6rem;
-      color: var(--text-general);
-      font-weight: 400;
-      text-transform: capitalize;
-      text-align: left;
-      line-height: 1.75;
-      padding: 0.5em 0;
-      position: relative;
-      color: var(--text-general);
-      /* postcss-bem-linter: ignore */
-      /* postcss-bem-linter: ignore */
-      /* postcss-bem-linter: ignore */
-      /* postcss-bem-linter: ignore */
-      /* postcss-bem-linter: ignore */
-      /* postcss-bem-linter: ignore */ }
-      .header__menu-link-text .color1-fill {
-        fill: var(--text-general); }
-      .header__menu-link-text .color1-stroke {
-        stroke: var(--text-general); }
-      .header__menu-link-text .color2-fill {
-        fill: none; }
-      .header__menu-link-text .color2-stroke {
-        stroke: none; }
-      .header__menu-link-text .color3-fill {
-        fill: var(--text-general); }
-      .header__menu-link-text .color3-stroke {
-        stroke: var(--text-general); }
-      .header__menu-link-text:before {
-        position: absolute;
-        top: 1.4em;
-        left: 1.2em; }
-      .header__menu-link-text:after {
-        display: block;
-        content: attr(title);
-        font-weight: 400;
-        height: 0;
-        overflow: hidden;
-        visibility: hidden; }
-    .header__menu-link:hover:not(.header__menu-link--active) {
-      background-color: var(--general-hover); }
-    .header__menu-link--active > .header__menu-link-text[title] {
-      font-weight: bold;
-      color: var(--text-prominent); }
-      .header__menu-link--active > .header__menu-link-text[title]:after {
-        color: var(--text-prominent); }
-  .header__logo {
-    background-color: #85acb0;
-    background-color: var(--brand-secondary);
-    border-radius: 10px;
-    color: var(--text-colored-background);
-    display: inline-block;
-    font-size: 1.4rem;
-    font-weight: normal;
-    height: 20px;
-    line-height: 1.43;
-    text-align: center;
-    width: 50px;
-    margin-left: 8px; }
-  .header__title {
-    display: inline-block;
-    font-weight: bold;
-    color: var(--text-prominent); }
-  .header__icon {
-    margin-right: 0.8rem;
-    vertical-align: middle; }
-
 /** @define footer */
 .footer {
   position: fixed;
@@ -2261,7 +2121,7 @@ table {
   font-size: 1.2rem;
   color: var(--text-general);
   font-weight: 400;
-  text-transform: capitalize;
+  text-transform: none;
   text-align: left;
   line-height: 1.25;
   color: var(--text-general); }
@@ -2417,7 +2277,7 @@ table {
         font-size: 1.6rem;
         color: var(--text-general);
         font-weight: 400;
-        text-transform: capitalize;
+        text-transform: none;
         text-align: left;
         line-height: 1.75;
         padding: 0 10px;
@@ -2446,7 +2306,7 @@ table {
           font-size: 1.4rem;
           color: var(--text-general);
           font-weight: 400;
-          text-transform: capitalize;
+          text-transform: none;
           text-align: center;
           line-height: 1.5;
           padding: 0 10px;
@@ -2575,7 +2435,7 @@ table {
     font-size: 1.6rem;
     color: var(--text-general);
     font-weight: 700;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.75;
     color: var(--text-general); }
@@ -2692,7 +2552,7 @@ table {
       font-size: 1.2rem;
       color: var(--text-general);
       font-weight: 400;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: center;
       line-height: 1.25;
       color: var(--text-prominent);
@@ -3328,7 +3188,7 @@ table {
     font-size: 1.4rem;
     color: var(--text-general);
     font-weight: 400;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.5;
     color: var(--text-general);
@@ -3346,7 +3206,7 @@ table {
     font-size: 1.2rem;
     color: var(--text-less-prominent);
     font-weight: 300;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.25; }
 
@@ -3387,7 +3247,7 @@ table {
   font-size: 1.4rem;
   color: var(--text-general);
   font-weight: 400;
-  text-transform: capitalize;
+  text-transform: none;
   text-align: center;
   line-height: 1.5;
   list-style: none;
@@ -3441,7 +3301,7 @@ table {
       font-size: 1.2rem;
       color: var(--text-colored-background);
       font-weight: 400;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: left;
       line-height: 1.25;
       content: 'L';
@@ -3528,7 +3388,7 @@ table {
       font-size: 1.2rem;
       color: var(--text-general);
       font-weight: 700;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: center;
       line-height: 1.25;
       color: var(--text-prominent); }
@@ -3536,7 +3396,7 @@ table {
       font-size: 1.2rem;
       color: var(--text-general);
       font-weight: 400;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: left;
       line-height: 1.25;
       cursor: pointer;
@@ -3702,7 +3562,7 @@ table {
       font-size: 1.4rem;
       color: var(--text-general);
       font-weight: 400;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: left;
       line-height: 1.5;
       color: var(--text-prominent);
@@ -3769,7 +3629,7 @@ table {
     font-size: 1.4rem;
     color: var(--text-general);
     font-weight: 700;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.5;
     color: var(--text-prominent);
@@ -3800,7 +3660,7 @@ table {
     font-size: 1.4rem;
     color: var(--text-general);
     font-weight: 400;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.5;
     color: var(--text-general);
@@ -3908,7 +3768,7 @@ table {
       font-size: 1.4rem;
       color: var(--text-colored-background);
       font-weight: 700;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: center;
       line-height: 1.5; }
   .trade-type-info-dialog__content {
@@ -3948,7 +3808,7 @@ table {
       font-size: 1.4rem;
       color: var(--text-general);
       font-weight: 700;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: left;
       line-height: 1.5;
       margin-left: 5.71429px;
@@ -4043,7 +3903,7 @@ table {
     font-size: 1.4rem;
     color: var(--text-general);
     font-weight: 400;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: center;
     line-height: 1.5;
     color: var(--text-prominent);
@@ -4070,7 +3930,7 @@ table {
     font-size: 1.4rem;
     color: var(--text-colored-background);
     font-weight: 700;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.5;
     color: var(--text-prominent); }
@@ -4083,7 +3943,7 @@ table {
     font-size: 1.4rem;
     color: var(--text-general);
     font-weight: 700;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.5;
     color: var(--text-prominent);
@@ -4103,7 +3963,7 @@ table {
     font-size: 1.4rem;
     color: var(--text-general);
     font-weight: 400;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.5;
     color: var(--text-prominent); }
@@ -4172,7 +4032,7 @@ table {
     font-size: 1.4rem;
     color: var(--text-general);
     font-weight: 400;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.5;
     background-color: var(--state-normal);
@@ -4183,7 +4043,7 @@ table {
       font-size: 1.4rem;
       color: var(--text-colored-background);
       font-weight: 700;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: left;
       line-height: 1.5;
       background-color: var(--state-active);
@@ -4220,7 +4080,7 @@ table {
       font-size: 1.2rem;
       color: var(--text-general);
       font-weight: 700;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: left;
       line-height: 1.25;
       display: flex;
@@ -4271,7 +4131,7 @@ table {
     font-size: 1.4rem;
     color: var(--text-colored-background);
     font-weight: 700;
-    text-transform: capitalize;
+    text-transform: none;
     text-align: left;
     line-height: 1.5; }
   .btn-purchase__info {
@@ -4881,7 +4741,7 @@ table {
   font-size: 1.4rem;
   color: var(--text-general);
   font-weight: 400;
-  text-transform: capitalize;
+  text-transform: none;
   text-align: left;
   line-height: 1.5;
   color: var(--text-prominent);
@@ -5551,7 +5411,7 @@ table {
       font-size: 1.4rem;
       color: var(--text-general);
       font-weight: 400;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: left;
       line-height: 1.5;
       color: var(--text-general); }
@@ -5613,7 +5473,7 @@ table {
       font-size: 1.4rem;
       color: var(--text-general);
       font-weight: 400;
-      text-transform: capitalize;
+      text-transform: none;
       text-align: center;
       line-height: 1.5;
       color: inherit; }
@@ -5652,7 +5512,7 @@ table {
         font-size: 1.4rem;
         color: var(--text-general);
         font-weight: 400;
-        text-transform: capitalize;
+        text-transform: none;
         text-align: left;
         line-height: 1.5;
         color: var(--text-less-prominent); }
