@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/br_remove_currency_type_dropdown/precache-manifest.4fa9db4c400b0b88083808d31bf39890.js"
+  "/br_remove_currency_type_dropdown/precache-manifest.d66b9af2fcdf1d45035433e96e00669f.js"
 );
 
 workbox.core.skipWaiting();
