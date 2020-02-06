@@ -918,7 +918,8 @@
   border-left: 4px solid var(--brand-red-coral); }
 
 .dc-vertical-tab__header__link {
-  font-weight: normal; }
+  font-weight: normal;
+  margin-right: 0.4rem; }
 
 .dc-vertical-tab__header--active .dc-vertical-tab__header__link {
   font-weight: bold; }
@@ -9809,6 +9810,10 @@ table {
   box-shadow: 18px 8px 8px var(--shadow-menu);
   border-radius: 4px;
   /** @define cashier-error */ }
+  .cashier__counter {
+    position: absolute;
+    top: 0.4rem;
+    right: -1.5rem; }
   .cashier__content {
     width: 100%;
     background: var(--status-default); }
