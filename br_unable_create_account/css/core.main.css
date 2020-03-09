@@ -604,8 +604,7 @@
   background-color: var(--general-main-2);
   box-shadow: 0 4px 6px 0 var(--shadow-menu);
   max-height: calc(100vh - 48px - 36px);
-  max-width: 90vw;
-  opacity: 0; }
+  max-width: 90vw; }
 
 .dc-modal__container--hide {
   display: none; }
