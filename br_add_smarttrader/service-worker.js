@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/br_add_smarttrader/precache-manifest.33290d7b0cdc68a149538a40c90f213f.js"
+  "/br_add_smarttrader/precache-manifest.56984777f3f246cb1fc163ca60bd8911.js"
 );
 
 workbox.core.skipWaiting();

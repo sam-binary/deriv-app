@@ -5651,7 +5651,9 @@ html,
     position: fixed;
     top: 0;
     transform: translateY(0px);
-    transition: transform 0.25s ease; }
+    transition: transform 0.25s ease;
+    display: flex;
+    flex-wrap: wrap; }
     .platform_dropdown__list__platform {
       position: relative;
       display: inline-flex;
