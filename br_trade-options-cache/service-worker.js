@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/br_trade-options-cache/precache-manifest.d6481b615380158d4fb7af0860791638.js"
+  "/br_trade-options-cache/precache-manifest.61ac315ec602012d17bb68efd31ec81a.js"
 );
 
 workbox.core.skipWaiting();
