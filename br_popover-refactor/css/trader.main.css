@@ -4931,10 +4931,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
   flex-direction: column;
   padding: 0 32px;
-  background-color: var(--overlay-inside-dialog); }
+  background-color: var(--overlay-inside-dialog);
+  z-index: 1000; }
   .market-is-closed-overlay p {
     font-size: 1.4rem;
     color: var(--text-general);
@@ -6234,7 +6234,7 @@
   .dc-collapsible {
     position: absolute;
     bottom: 0;
-    z-index: 99999;
+    z-index: 999;
     margin: 0 auto;
     left: 0;
     width: calc(100vw - 1.6rem);
