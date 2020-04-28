@@ -5984,7 +5984,7 @@
       .trade-container__fieldset .dc-button-menu__wrapper .dc-button-menu__button, .trade-container__fieldset .dc-button-menu__wrapper .dc-button-menu__button--active {
         height: 3.2rem; }
     .trade-container__fieldset .dc-button-menu--highlight {
-      background-color: var(--state-disabled) !important; }
+      background-color: var(--state-active) !important; }
   .trade-container__input {
     align-self: center;
     -webkit-appearance: none;
