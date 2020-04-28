@@ -5978,7 +5978,7 @@
       .trade-container__fieldset .dc-datepicker .dc-input__field {
         height: 3.2rem; }
     .trade-container__fieldset .dc-button-menu__button span {
-      color: var(--text-general); }
+      color: var(--text-prominent); }
     .trade-container__fieldset .dc-button-menu__wrapper {
       background-color: var(--state-normal); }
       .trade-container__fieldset .dc-button-menu__wrapper .dc-button-menu__button, .trade-container__fieldset .dc-button-menu__wrapper .dc-button-menu__button--active {
