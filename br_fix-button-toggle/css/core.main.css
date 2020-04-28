@@ -3046,7 +3046,7 @@
   text-transform: unset;
   text-align: left;
   line-height: 1.5;
-  color: var(--text-less-prominent); }
+  color: var(--text-general); }
 
 .dc-button-menu__button--active {
   cursor: auto;
