@@ -6181,6 +6181,12 @@
       /* postcss-bem-linter: ignore */ }
       .trade-container__popover .dc-checkbox__label {
         font-size: inherit; }
+  .trade-container__tooltip[data-tooltip]:before {
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
+    width: max-content !important; }
+  .trade-container__tooltip[data-tooltip]:before, .trade-container__tooltip[data-tooltip][data-tooltip-pos='left']:before {
+    max-width: 280px !important; }
   .trade-container .symbols.disabled {
     color: var(--text-disabled); }
 
