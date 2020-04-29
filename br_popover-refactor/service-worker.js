@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/br_popover-refactor/precache-manifest.47e20567f942a85f6a81b876dd148c72.js"
+  "/br_popover-refactor/precache-manifest.40e4db786d076d90a18d11159c201544.js"
 );
 
 workbox.core.skipWaiting();

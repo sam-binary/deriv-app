@@ -4435,9 +4435,8 @@
 .allow-equals {
   display: flex;
   align-items: center;
-  position: relative; }
-  .allow-equals__input-field {
-    margin-top: 0.6em; }
+  position: relative;
+  margin-top: 0.6em; }
   .allow-equals__label {
     font-size: 1.4rem;
     color: var(--text-general);
@@ -4448,8 +4447,6 @@
     padding: 0 6.66667px;
     color: var(--text-general);
     cursor: pointer; }
-  .allow-equals__tooltip {
-    margin-top: 1em; }
   @media (min-width: 320px) and (max-width: 767px) {
     .allow-equals__subtitle {
       color: var(--text-less-prominent); } }
