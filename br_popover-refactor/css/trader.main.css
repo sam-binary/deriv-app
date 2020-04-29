@@ -5209,7 +5209,8 @@
         background: var(--purchase-section-2);
         background: linear-gradient(0deg, var(--purchase-section-2) 0%, var(--purchase-section-2) 50%, var(--purchase-main-2) 50%, var(--purchase-main-2) 100%); } }
   .btn-purchase--disabled, .btn-purchase[disabled] {
-    cursor: default; }
+    cursor: default;
+    opacity: 0.32; }
   .btn-purchase--animated--slide .btn-purchase__icon_wrapper {
     width: 16px;
     height: 16px; }
@@ -5959,8 +5960,8 @@
       color: var(--text-general); }
       .trade-container__fieldset-info--left {
         left: 5px; }
-    .trade-container__fieldset-wrapper--disabled {
-      opacity: 0.32; }
+    .trade-container__fieldset-wrapper--disabled .btn-purchase__box-shadow {
+      opacity: 0; }
     .trade-container__fieldset-tooltip-text, .trade-container__fieldset-text {
       margin-top: 0.8rem;
       font-size: 1.2rem;
@@ -6058,6 +6059,8 @@
             display: flex;
             justify-content: flex-end;
             align-items: center; } }
+      .trade-container__price-info--disabled, .trade-container__order-input-info--disabled {
+        opacity: 0.32; }
       .trade-container__price-info--slide, .trade-container__order-input-info--slide {
         width: 92px;
         height: 8px;

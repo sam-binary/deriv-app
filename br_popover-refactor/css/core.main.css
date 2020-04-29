@@ -2586,6 +2586,7 @@
 .dc-select-native__display {
   height: 38px;
   width: 100%;
+  max-width: calc(100vw - 4rem);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -2598,9 +2599,9 @@
   overflow: hidden;
   max-width: calc(100% - 4rem);
   text-overflow: ellipsis;
-  display: flex;
+  display: block;
   height: 100%;
-  align-items: center; }
+  line-height: 3.8rem; }
 
 .dc-select-native__placeholder {
   position: absolute;
@@ -3069,7 +3070,7 @@
   text-transform: unset;
   text-align: left;
   line-height: 1.5;
-  color: var(--text-less-prominent); }
+  color: var(--text-general); }
 
 .dc-button-menu__button--active {
   cursor: auto;
@@ -3089,11 +3090,10 @@
   position: relative;
   border-radius: 4px;
   width: 100%;
-  background-color: var(--state-disabled);
+  background-color: var(--state-normal);
   display: flex; }
 
 .dc-button-menu__wrapper .dc-button-menu__button, .dc-button-menu__wrapper .dc-button-menu__button--active {
-  height: 100%;
   background-color: rgba(0, 0, 0, 0) !important;
   z-index: 1; }
 
@@ -3111,7 +3111,7 @@
   z-index: 0;
   transition: transform 0.25s ease;
   pointer-events: none;
-  background-color: var(--state-normal) !important; }
+  background-color: var(--state-active) !important; }
 
 /*------------------------------------*
  *  # Constants
@@ -6777,7 +6777,7 @@ html,
     box-shadow: 0 8px 16px 0 var(--shadow-menu);
     right: 0;
     top: calc(100% + 4px);
-    width: 278px;
+    width: 320px;
     background-color: var(--general-main-2); }
     .acc-switcher__wrapper--enter-done {
       opacity: 1;
@@ -6800,36 +6800,15 @@ html,
         height: 100%;
         border-radius: 0; } }
   .acc-switcher__new-account {
-    background-color: transparent;
-    border-radius: 4px;
-    margin: 0 0 16px; }
-    .acc-switcher__new-account-link {
-      background-color: transparent;
-      margin: 0 0 0.8em;
-      padding: 0 0 0 0.8em;
-      display: flex;
-      text-decoration: none;
-      width: 100%;
-      height: 4rem;
-      align-items: center; }
-      .acc-switcher__new-account-link .dc-btn {
-        background-color: transparent;
-        padding: 0; }
-        .acc-switcher__new-account-link .dc-btn__text {
-          color: var(--general-main-1); }
-    .acc-switcher__new-account:hover {
-      background-color: rgba(255, 68, 79, 0.08) !important; }
-    .acc-switcher__new-account .dc-btn__text {
-      font-weight: normal;
-      color: var(--brand-red-coral); }
-    .acc-switcher__new-account .dc-btn {
-      align-items: center;
-      background-color: transparent;
-      display: flex;
-      margin: 0;
-      padding: 0 0 0 0.8rem;
-      height: 4rem;
-      justify-content: left; }
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.6rem 1.8rem;
+    font-size: var(--text-size-xs); }
+    .acc-switcher__new-account-text {
+      margin-left: 0.8rem;
+      color: var(--text-general); }
+    .acc-switcher__new-account-btn {
+      margin-left: auto; }
   .acc-switcher__list {
     border-radius: 4px;
     display: flex;
@@ -6881,34 +6860,16 @@ html,
       .acc-switcher__accounts .acc-switcher__account:only-child {
         border-radius: 4px; }
       .acc-switcher__accounts .acc-switcher__account:last-child {
-        margin-bottom: 16px; }
-      .acc-switcher__accounts .acc-switcher__account-set-currency {
-        justify-content: flex-end;
-        padding: 0.8rem 0.4rem; }
-        .acc-switcher__accounts .acc-switcher__account-set-currency-link {
-          font-size: 1.2rem;
-          color: var(--button-primary-default);
-          font-weight: bold; }
-          .acc-switcher__accounts .acc-switcher__account-set-currency-link:hover {
-            text-decoration: underline;
-            cursor: pointer; }
-        .acc-switcher__accounts .acc-switcher__account-set-currency:hover {
-          background: var(--general-main-2) !important;
-          cursor: auto;
-          cursor: initial; }
-    .acc-switcher__accounts--has-add-account:not(:empty) {
-      margin-bottom: -16px; }
+        margin-bottom: 8px; }
   .acc-switcher__account {
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    padding: 0.8em;
+    padding: 0.3rem 1.6rem;
     position: relative;
     background: var(--general-main-2);
-    text-decoration: none;
-    padding-top: 0.3em;
-    padding-bottom: 0.3em; }
+    text-decoration: none; }
     .acc-switcher__account .acc-switcher__id {
       font-size: 1.4rem;
       color: var(--text-general);
@@ -6991,6 +6952,9 @@ html,
   .acc-switcher__loader {
     margin: 1rem auto !important;
     font-size: 0.8rem; }
+  .acc-switcher__btn {
+    width: calc(100% - 32px);
+    margin: 0 16px 8px; }
 
 /** @define set-currency; weak */
 .set-currency {
