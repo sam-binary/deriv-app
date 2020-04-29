@@ -5942,14 +5942,10 @@
     .trade-container__fieldset > div:first-child {
       margin-top: 0; }
     .trade-container__fieldset-header {
-      height: 1.5rem;
       position: relative; }
       .trade-container__fieldset-header--inline {
-        /* postcss-bem-linter: ignore */ }
-        .trade-container__fieldset-header--inline .dc-popover {
-          position: absolute;
-          top: 0;
-          right: 0; }
+        display: flex;
+        justify-content: flex-end; }
     .trade-container__fieldset-info {
       font-size: 1.4rem;
       color: var(--text-general);
@@ -5957,9 +5953,10 @@
       text-transform: none;
       text-align: left;
       line-height: 1.5;
-      color: var(--text-general); }
+      color: var(--text-general);
+      margin: auto; }
       .trade-container__fieldset-info--left {
-        left: 5px; }
+        transform: translateX(5px); }
     .trade-container__fieldset-wrapper--disabled .btn-purchase__box-shadow {
       opacity: 0; }
     .trade-container__fieldset-tooltip-text, .trade-container__fieldset-text {
