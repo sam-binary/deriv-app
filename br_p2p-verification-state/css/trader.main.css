@@ -4370,7 +4370,7 @@
             font-weight: 400;
             text-transform: none;
             text-align: left;
-            line-height: unset;
+            line-height: 1.4;
             color: var(--text-colored-background); } }
       .trade-container__price-info-currency, .trade-container__order-input-info-currency {
         margin-left: 4px;
