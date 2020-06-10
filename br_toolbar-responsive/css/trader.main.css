@@ -2565,8 +2565,6 @@
     touch-action: manipulation; }
   .input[readonly] {
     cursor: pointer; }
-  .input::-webkit-input-placeholder {
-    border-color: var(--border-normal); }
   .input::-moz-placeholder {
     border-color: var(--border-normal); }
   .input:-ms-input-placeholder {
@@ -3529,6 +3527,7 @@
       border-radius: 100%;
       border: 0;
       cursor: pointer;
+      -webkit-transition: box-shadow 0.2s;
       transition: box-shadow 0.2s;
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
       background: var(--state-active); }
@@ -3542,6 +3541,7 @@
       border-radius: 100%;
       border: 0;
       cursor: pointer;
+      -moz-transition: box-shadow 0.2s;
       transition: box-shadow 0.2s;
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
       background: var(--state-active); }
@@ -3554,6 +3554,7 @@
       border-radius: 100%;
       border: 0;
       cursor: pointer;
+      -ms-transition: box-shadow 0.2s;
       transition: box-shadow 0.2s;
       box-shadow: 0 0 0 0px rgba(0, 0, 0, 0);
       background: var(--state-active); }
@@ -4370,7 +4371,7 @@
             font-weight: 400;
             text-transform: none;
             text-align: left;
-            line-height: unset;
+            line-height: 1.4;
             color: var(--text-colored-background); } }
       .trade-container__price-info-currency, .trade-container__order-input-info-currency {
         margin-left: 4px;
