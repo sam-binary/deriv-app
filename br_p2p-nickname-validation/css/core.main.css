@@ -8608,7 +8608,7 @@
   bottom: 0; }
 
 .dc-dialog__wrapper {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;

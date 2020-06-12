@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/br_p2p-nickname-validation/precache-manifest.cf1094f6d73ea8dc320f212382488562.js"
+  "/br_p2p-nickname-validation/precache-manifest.9becac6821f14e8c179fe51792c1df29.js"
 );
 
 workbox.core.skipWaiting();
