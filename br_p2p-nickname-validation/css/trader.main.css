@@ -105,7 +105,7 @@
   overflow: visible;
   height: 0;
   top: unset !important;
-  bottom: 80px !important; }
+  bottom: 80px; }
   .cq-bottom-ui-widgets .bottom-widgets {
     left: -3.5em; }
 
@@ -958,12 +958,9 @@
 /** @define app-contents; weak */
 .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container {
   width: 100%; }
-  .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .ciq-navigation-widget {
-    transform: translate3d(248px, 0, 0); }
-  .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .cq-top-ui-widgets {
-    transform: translate3d(248px, 0, 0); }
-  .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .sc-toolbar-widget {
-    transform: translate3d(248px, 0, 0); }
+  .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .ciq-navigation-widget,
+  .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .cq-top-ui-widgets,
+  .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .sc-toolbar-widget,
   .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .stx-panel-control {
     transform: translate3d(248px, 0, 0); }
   .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .cq-chart-controls {
@@ -1010,7 +1007,7 @@
   position: relative;
   padding: 0.8em 1.2em 0;
   display: flex;
-  min-height: calc(100vh - 83px);
+  min-height: calc(100vh - 84px);
   transition: transform 0.25s ease;
   will-change: transform;
   overflow: hidden; }
@@ -1018,11 +1015,11 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    height: calc(100vh - 108px - 41px);
+    height: calc(100vh - 108px - 53px);
     padding-bottom: 2.4rem; }
     .trade-container__replay .contract-drawer {
       /* prettier-ignore */
-      height: calc(100vh - 48px - 36px - 41px - (8px * 6));
+      height: calc(100% + 2.4rem);
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
       z-index: 1;
@@ -1069,9 +1066,9 @@
             .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .cq-top-ui-widgets .info-box-container .chart-close-btn,
             .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .info-box .info-box-container .chart-close-btn {
               display: none; }
-        .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .sc-toolbar-widget {
-          transition: transform 0.25s ease; }
-        .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .stx-panel-control {
+        .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .sc-toolbar-widget,
+        .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .stx-panel-control,
+        .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .ciq-navigation-widget {
           transition: transform 0.25s ease; }
         .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .ciq-asset-information {
           top: 75px; }
@@ -1080,8 +1077,6 @@
           left: 8px;
           padding: 0;
           position: absolute; }
-        .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .ciq-navigation-widget {
-          transition: transform 0.25s ease; }
         .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .cq-bottom-ui-widgets {
           bottom: 30px !important; }
           .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .cq-bottom-ui-widgets .digits {
@@ -1164,7 +1159,7 @@
     left: 0;
     z-index: 0; }
     .chart-container .cq-context div.ciq-chart {
-      height: calc(100% - 5em);
+      height: 100%;
       box-shadow: none; }
       .chart-container .cq-context div.ciq-chart div.cq-last-digits {
         bottom: 15px;
@@ -1185,19 +1180,16 @@
       width: calc(100% - 9em); }
   .chart-container div.debug-text {
     display: none; }
-  .chart-container .cq-chart-control-left .cq-chart-controls {
+  .chart-container .cq-chart-control-left .cq-chart-controls,
+  .chart-container .cq-chart-control-left .sc-toolbar-widget,
+  .chart-container .cq-chart-control-left .stx-panel-control,
+  .chart-container .cq-chart-control-left .ciq-navigation-widget {
     transform: translate3d(0, 0, 0);
     transition: transform 0.25s ease; }
   .chart-container .cq-chart-control-left .cq-top-ui-widgets {
     left: 9em; }
     .chart-container .cq-chart-control-left .cq-top-ui-widgets .info-box {
       transform: translate3d(0, 0, 0); }
-  .chart-container .cq-chart-control-left .sc-toolbar-widget {
-    transform: translate3d(0, 0, 0); }
-  .chart-container .cq-chart-control-left .stx-panel-control {
-    transform: translate3d(0, 0, 0); }
-  .chart-container .cq-chart-control-left .ciq-navigation-widget {
-    transform: translate3d(0, 0, 0); }
   .chart-container .ciq-chart .cq-top-ui-widgets,
   .chart-container .ciq-chart .info-box {
     transition: transform 0.25s ease; }
@@ -1233,8 +1225,7 @@
               display: none; } }
   .chart-container .ciq-chart .cq-chart-controls {
     transition: max-width 0.25s ease, transform 0.25s ease; }
-  .chart-container .ciq-chart .ciq-navigation-widget {
-    transition: transform 0.25s ease; }
+  .chart-container .ciq-chart .ciq-navigation-widget,
   .chart-container .ciq-chart .stx-panel-control {
     transition: transform 0.25s ease; }
   .chart-container .ciq-chart .sc-toolbar-widget {
@@ -1261,6 +1252,11 @@
             left: 0.8rem; }
           .chart-container .ciq-chart .sc-toolbar-widget .sc-chart-mode__menu > .ic-icon {
             top: 0.6rem; } }
+  .chart-container .ciq-chart--screenshot .sc-toolbar-widget,
+  .chart-container .ciq-chart--screenshot .stx-panel-control,
+  .chart-container .ciq-chart--screenshot .ciq-navigation-widget,
+  .chart-container .ciq-chart--screenshot .cq-top-ui-widgets {
+    transform: translate3d(0, 0, 0) !important; }
   .chart-container .chartContainer {
     background: transparent;
     min-height: 100%; }
@@ -3069,7 +3065,8 @@
     width: 100%;
     height: 100%; }
   .contract-type-info__card {
-    min-height: calc(100vh - 268px);
+    min-height: calc(100vh - 210px);
+    max-height: calc(100vh - 268px);
     width: 272px;
     margin-right: 2.4rem;
     display: flex;
@@ -3082,8 +3079,6 @@
       .contract-type-info__card {
         min-height: 535px; } }
   .contract-type-info__content {
-    margin-top: 2.4rem;
-    margin-bottom: auto;
     overflow: hidden;
     /* postcss-bem-linter: ignore */
     /* postcss-bem-linter: ignore */
@@ -3162,6 +3157,9 @@
         background-color: var(--brand-red-coral); }
   .contract-type-info__icon {
     cursor: pointer; }
+  .contract-type-info__scrollbars {
+    margin-top: 2.4rem;
+    margin-bottom: auto; }
 
 /** @define .market-is-closed-overlay */
 .market-is-closed-overlay {
@@ -4525,4 +4523,11 @@
     .popup-root .dc-toast-error {
       z-index: 9999;
       top: 2em; } }
+
+/** @define market-unavailable-modal */
+@media (min-width: 320px) and (max-width: 767px) {
+  .market-unavailable-modal {
+    /* postcss-bem-linter: ignore */ }
+    .market-unavailable-modal .dc-dialog__footer {
+      flex-wrap: nowrap; } }
 
