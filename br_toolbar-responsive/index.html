@@ -10,25 +10,6 @@
                     applicationId: '34461589-53a5-4f9f-aa85-5d0e994ee1a4',
                 });
         </script>
-        <script>
-            try {
-                performance.mark('started');
-                const observer = new PerformanceObserver(function(list) {
-                    const perfEntries = list.getEntries();
-                    for (let i = 0; i < perfEntries.length; i++) {
-                        const time = Math.round(perfEntries[i].startTime + perfEntries[i].duration);
-                        dataLayer.push({
-                            event: perfEntries[i].name,
-                            duration: time,
-                        });
-                    }
-                });
-                // register observer for paint timing notifications
-                observer.observe({ entryTypes: ['paint'] });
-            } catch (error) {
-                // ignore error to pervent showing on console
-            }
-        </script>
         <!-- Set skeleton theme color properties -->
         <style>
             :root {
@@ -243,7 +224,7 @@
         <meta name="google-site-verification" content="g5u3TyEdmYJ_HKZ6EmpW1nlKwD4XPVeLMhN9leeMfuw" />
         <meta property="og:title" content="Deriv" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/common/og_image.gif" />
+        <meta property="og:image" content="" /> <!-- TODO: Use og_image.gif once the new design is ready -->
         <meta name="google" content="notranslate" />
         <meta name="referrer" content="origin" />
 
@@ -254,7 +235,7 @@
         <title>Deriv App | Deriv</title>
         <meta charset="UTF-8" />
         <meta name="google-site-verification" content="g5u3TyEdmYJ_HKZ6EmpW1nlKwD4XPVeLMhN9leeMfuw" />
-    <link href="/br_toolbar-responsive/css/smartcharts.css" rel="stylesheet"><link href="/br_toolbar-responsive/css/bot-web-ui.main.css" rel="stylesheet"><link href="/br_toolbar-responsive/manifest.json" rel="manifest"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-114.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-120.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-144.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-152.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-180.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-57.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-60.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-72.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-76.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-16.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-160.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-192.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-32.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-96.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon.ico" rel="icon"><link href="/br_toolbar-responsive/public/fonts/binary_symbols.woff" rel="preload" as="font" crossorigin="crossorigin"><link href="/br_toolbar-responsive/css/core.main.css" rel="stylesheet"><link as="style" href="/br_toolbar-responsive/css/core.account-signup-modal.add60e91d462bb4139a5.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.account.9cf4b46d98535839f75f.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.bot.eee405e40e3a4d5b1762.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.cashier.5abe13e82d4b1a642658.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.default~account-info~~df90089f.184593682d31d0f9901d.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.default~account~accou~f16ea6e8.f0e27117ab02dee8e2de.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.default~account~cashier.651a5f218957fe0b7cd0.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.set-residence-modal.83ca5e39da7ed833a75d.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.trader.d9b1a1c22860a50d36ca.css" rel="preload"></head>
+    <link href="/br_toolbar-responsive/css/smartcharts.css" rel="stylesheet"><link href="/br_toolbar-responsive/css/bot-web-ui.main.css" rel="stylesheet"><link href="/br_toolbar-responsive/manifest.json" rel="manifest"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-114.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-120.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-144.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-152.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-180.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-57.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-60.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-72.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/apple-touch-icon-76.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-16.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-160.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-192.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-32.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon-96.png" rel="icon"><link href="/br_toolbar-responsive/public/images/favicons/favicon.ico" rel="icon"><link href="/br_toolbar-responsive/public/fonts/binary_symbols.woff" rel="preload" as="font" crossorigin="crossorigin"><link href="/br_toolbar-responsive/css/core.main.css" rel="stylesheet"><link as="style" href="/br_toolbar-responsive/css/core.account-signup-modal.add60e91d462bb4139a5.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.account.f5aa59dedd8e348eb888.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.bot.301fa3960b0fa649d480.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.cashier.f4a2838208506738133c.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.default~account-info~~df90089f.06d7fd37f1a613468b4e.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.default~account~accou~f16ea6e8.f0e27117ab02dee8e2de.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.default~account~cashier.0a704ff26ca1ba8c3eb9.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.set-residence-modal.83ca5e39da7ed833a75d.css" rel="preload"><link as="style" href="/br_toolbar-responsive/css/core.trader.7b34ed49a051f527669e.css" rel="preload"></head>
     <body class="body theme">
         <!-- Start GTM NoScript -->
         <noscript
@@ -315,8 +296,5 @@
             </div>
         </div>
         <!-- End Temporary Mobile Landscape UI Blocker -->
-        <script>
-            performance.mark('first-contentful-paint');
-        </script>
-    <script type="text/javascript" src="/br_toolbar-responsive/js/core.vendors~main.69aa8baaa0152c86dd15.js"></script><script type="text/javascript" src="/br_toolbar-responsive/js/core.main.e4a704208e9f637e0c74.js"></script></body>
+    <script type="text/javascript" src="/br_toolbar-responsive/js/core.vendors~main.8445dac8ff1a457b84db.js"></script><script type="text/javascript" src="/br_toolbar-responsive/js/core.main.6f0a83cb568f20626e70.js"></script></body>
 </html>
