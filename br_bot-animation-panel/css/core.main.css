@@ -1577,6 +1577,11 @@
 .dc-input__field:-webkit-autofill:hover, .dc-input__field:-webkit-autofill:focus, .dc-input__field:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px var(--fill-normal) inset !important; }
 
+.dc-input__textarea:not(.dc-input--no-placeholder):not(:focus):empty ~ label {
+  transform: none;
+  color: var(--text-less-prominent);
+  padding: 0 4px; }
+
 .dc-input__leading-icon {
   margin-left: 1rem;
   top: 1rem;
@@ -4545,6 +4550,11 @@
 .dc-input__field:-webkit-autofill:hover, .dc-input__field:-webkit-autofill:focus, .dc-input__field:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px var(--fill-normal) inset !important; }
 
+.dc-input__textarea:not(.dc-input--no-placeholder):not(:focus):empty ~ label {
+  transform: none;
+  color: var(--text-less-prominent);
+  padding: 0 4px; }
+
 .dc-input__leading-icon {
   margin-left: 1rem;
   top: 1rem;
@@ -5676,6 +5686,11 @@
 
 .dc-input__field:-webkit-autofill:hover, .dc-input__field:-webkit-autofill:focus, .dc-input__field:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px var(--fill-normal) inset !important; }
+
+.dc-input__textarea:not(.dc-input--no-placeholder):not(:focus):empty ~ label {
+  transform: none;
+  color: var(--text-less-prominent);
+  padding: 0 4px; }
 
 .dc-input__leading-icon {
   margin-left: 1rem;

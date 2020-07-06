@@ -975,7 +975,7 @@
 /** @define app-contents; weak */
 .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container {
   width: 100%; }
-  .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .ciq-navigation-widget,
+  .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .sc-navigation-widget,
   .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .cq-top-ui-widgets,
   .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .sc-toolbar-widget,
   .app-contents--show-positions-drawer:not(.app-contents--is-mobile) .trade-container .chart-container .stx-panel-control {
@@ -1091,7 +1091,7 @@
               display: none; }
         .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .sc-toolbar-widget,
         .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .stx-panel-control,
-        .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .ciq-navigation-widget {
+        .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .sc-navigation-widget {
           transition: transform 0.25s ease; }
         .trade-container__replay .replay-chart__container .smartcharts .ciq-chart .ciq-asset-information {
           top: 75px; }
@@ -1180,7 +1180,7 @@
       .chart-container__loader + .smartcharts .cq-bottom-ui-widgets,
       .chart-container__loader + .smartcharts .cq-inchart-subholder {
         display: none; }
-  .chart-container .smartcharts-mobile .cq-categorical-display {
+  .chart-container .smartcharts-mobile .sc-categorical-display {
     height: calc(100% - 8px) !important; }
   .chart-container .cq-context {
     top: 0;
@@ -1211,7 +1211,7 @@
   .chart-container .cq-chart-control-left .cq-chart-controls,
   .chart-container .cq-chart-control-left .sc-toolbar-widget,
   .chart-container .cq-chart-control-left .stx-panel-control,
-  .chart-container .cq-chart-control-left .ciq-navigation-widget {
+  .chart-container .cq-chart-control-left .sc-navigation-widget {
     transform: translate3d(0, 0, 0);
     transition: transform 0.25s ease; }
   .chart-container .cq-chart-control-left .cq-top-ui-widgets {
@@ -1253,7 +1253,7 @@
               display: none; } }
   .chart-container .ciq-chart .cq-chart-controls {
     transition: max-width 0.25s ease, transform 0.25s ease; }
-  .chart-container .ciq-chart .ciq-navigation-widget,
+  .chart-container .ciq-chart .sc-navigation-widget,
   .chart-container .ciq-chart .stx-panel-control {
     transition: transform 0.25s ease; }
   .chart-container .ciq-chart .sc-toolbar-widget {
@@ -1282,7 +1282,7 @@
             top: 0.6rem; } }
   .chart-container .ciq-chart--screenshot .sc-toolbar-widget,
   .chart-container .ciq-chart--screenshot .stx-panel-control,
-  .chart-container .ciq-chart--screenshot .ciq-navigation-widget,
+  .chart-container .ciq-chart--screenshot .sc-navigation-widget,
   .chart-container .ciq-chart--screenshot .cq-top-ui-widgets {
     transform: translate3d(0, 0, 0) !important; }
   .chart-container .chartContainer {
@@ -4223,7 +4223,7 @@
 .smartcharts-mobile .cq-chart-title .sc-dialog__body {
   height: 100% !important; }
 
-.smartcharts-mobile .cq-categorical-display {
+.smartcharts-mobile .sc-categorical-display {
   height: calc(100% - 38px) !important; }
 
 @-webkit-keyframes slide {
