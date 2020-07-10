@@ -18,6 +18,10 @@ $modal_container_height: calc(100vh - 210px);
     }
     &__container {
         margin-top: 8px;
+
+        &--invisible {
+            opacity: 30%;
+        }
     }
     &-recent {
         &__empty {
@@ -61,6 +65,10 @@ $modal_container_height: calc(100vh - 210px);
                     width: fit-content;
                 }
             }
+        }
+        &__loading {
+            position: absolute;
+            z-index: 99;
         }
         &__explain {
             &-list {

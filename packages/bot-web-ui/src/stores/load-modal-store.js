@@ -1,6 +1,7 @@
 import { observable, action } from 'mobx';
 import { localize } from '@deriv/translations';
 import { load, config, save_types, getSavedWorkspaces, removeExistingWorkspace } from '@deriv/bot-skeleton';
+import { runUIThread } from '../utils/render';
 
 export default class LoadModalStore {
     @observable is_load_modal_open = false;
@@ -10,6 +11,7 @@ export default class LoadModalStore {
     @observable is_explanation_expand = false;
     @observable loaded_local_file = null;
     @observable is_open_button_loading = false;
+    @observable is_strategy_loading = false;
     recent_workspace;
     local_workspace;
     drop_zone;
@@ -28,13 +30,24 @@ export default class LoadModalStore {
     }
 
     @action.bound
+    toggleLoading() {
+        this.is_strategy_loading = !this.is_strategy_loading;
+    }
+
+    @action.bound
     setActiveTabIndex(index) {
         this.active_index = index;
 
         // dispose workspace in recent tab when switch tab
-        if (this.active_index !== 0 && this.recent_workspace && this.recent_workspace.rendered) {
-            this.recent_workspace.dispose();
-        }
+        const disposeRecentWorkspace = () => {
+            if (this.active_index !== 0 && this.recent_workspace && this.recent_workspace.rendered)
+                this.recent_workspace.dispose();
+        };
+        runUIThread({
+            startFn: this.toggleLoading,
+            endFn: this.toggleLoading,
+            runFn: disposeRecentWorkspace,
+        });
 
         // preview workspace when switch to recent tab
         if (this.active_index === 0 && this.recent_files.length) {
@@ -42,15 +55,22 @@ export default class LoadModalStore {
         }
 
         // dispose workspace in local tab when switch tab
-        if (
-            this.active_index !== 1 &&
-            this.loaded_local_file &&
-            this.local_workspace &&
-            this.local_workspace.rendered
-        ) {
-            this.local_workspace.dispose();
-            this.loaded_local_file = null;
-        }
+        const disposeLocalWorkspace = () => {
+            if (
+                this.active_index !== 1 &&
+                this.loaded_local_file &&
+                this.local_workspace &&
+                this.local_workspace.rendered
+            ) {
+                this.local_workspace.dispose();
+                this.loaded_local_file = null;
+            }
+        };
+        runUIThread({
+            startFn: this.toggleLoading,
+            endFn: this.toggleLoading,
+            runFn: disposeLocalWorkspace,
+        });
 
         // add drag and drop event listerner when switch to local tab
         if (this.active_index === 1) {
@@ -67,15 +87,18 @@ export default class LoadModalStore {
     @action.bound
     onMount() {
         if (this.recent_files.length && this.active_index === 0) {
-            this.selected_file_id = this.recent_files[0].id;
-            this.previewWorkspace(this.selected_file_id);
+            this.previewWorkspace(this.recent_files[0].id);
         }
     }
 
     @action.bound
     onUnmount() {
         if (this.recent_workspace && this.recent_workspace.rendered) {
-            this.recent_workspace.dispose();
+            runUIThread({
+                startFn: this.toggleLoading,
+                endFn: this.toggleLoading,
+                runFn: this.recent_workspace.dispose,
+            });
         }
         this.selected_file_id = null;
         this.setActiveTabIndex(0);
@@ -83,30 +106,30 @@ export default class LoadModalStore {
 
     @action.bound
     previewWorkspace(id) {
-        const selected_file_id = this.recent_files.find(file => file.id === id);
-        if (!selected_file_id) {
-            return;
-        }
-
-        const xml_file = selected_file_id.xml;
         this.selected_file_id = id;
+        const selected_file = this.recent_files.find(file => file.id === id);
+        if (!selected_file) return;
 
-        if (!this.recent_workspace || !this.recent_workspace.rendered) {
-            const ref = document.getElementById('load-recent__scratch');
-            this.recent_workspace = Blockly.inject(ref, {
-                media: `${__webpack_public_path__}media/`, // eslint-disable-line
-                zoom: {
-                    wheel: false,
-                    startScale: config.workspaces.previewWorkspaceStartScale,
-                },
-                readOnly: true,
-                scrollbars: true,
-            });
-        } else {
-            this.recent_workspace.clear();
-        }
+        const runFn = () => {
+            if (!this.recent_workspace || !this.recent_workspace.rendered) {
+                const ref = document.getElementById('load-recent__scratch');
+                this.recent_workspace = Blockly.inject(ref, {
+                    media: `${__webpack_public_path__}media/`, // eslint-disable-line
+                    zoom: {
+                        wheel: false,
+                        startScale: config.workspaces.previewWorkspaceStartScale,
+                    },
+                    readOnly: true,
+                    scrollbars: true,
+                });
+            } else {
+                this.recent_workspace.clear();
+            }
 
-        load({ block_string: xml_file, drop_event: {}, workspace: this.recent_workspace });
+            load({ block_string: selected_file.xml, drop_event: {}, workspace: this.recent_workspace });
+        };
+
+        runUIThread({ startFn: this.toggleLoading, endFn: this.toggleLoading, runFn });
     }
 
     @action.bound
@@ -214,11 +237,15 @@ export default class LoadModalStore {
                     scrollbars: true,
                 });
                 load_options.workspace = this.local_workspace;
+
+                const loadLocalPreview = () => load(load_options);
+
+                runUIThread({ startFn: this.toggleLoading, endFn: this.toggleLoading, runFn: loadLocalPreview });
             } else {
                 load_options.workspace = Blockly.derivWorkspace;
                 load_options.file_name = file_name;
+                load(load_options);
             }
-            load(load_options);
         });
         reader.readAsText(file);
     }

@@ -90,32 +90,32 @@ export const load = ({
     const blockConversion = new BlockConversion();
     xml = blockConversion.convertStrategy(xml, showIncompatibleStrategyDialog);
 
-    const blockly_xml = xml.querySelectorAll('block');
+    // const blockly_xml = xml.querySelectorAll('block');
 
     // Check if there are any blocks in this strategy.
-    if (!blockly_xml.length) {
-        return showInvalidStrategyError();
-    }
+    // if (!blockly_xml.length) {
+    //     return showInvalidStrategyError();
+    // }
 
     // Check if all block types in XML are allowed.
-    const has_invalid_blocks = Array.from(blockly_xml).some(block => {
-        const block_type = block.getAttribute('type');
-        return !Object.keys(Blockly.Blocks).includes(block_type);
-    });
+    // const has_invalid_blocks = Array.from(blockly_xml).some(block => {
+    //     const block_type = block.getAttribute('type');
+    //     return !Object.keys(Blockly.Blocks).includes(block_type);
+    // });
 
-    if (has_invalid_blocks) {
-        return showInvalidStrategyError();
-    }
+    // if (has_invalid_blocks) {
+    //     return showInvalidStrategyError();
+    // }
 
     try {
         const is_collection = xml.hasAttribute('collection') && xml.getAttribute('collection') === 'true';
         const event_group = is_collection ? `load_collection${Date.now()}` : `dbot-load${Date.now()}`;
 
         Blockly.Events.setGroup(event_group);
-        removeLimitedBlocks(
-            workspace,
-            Array.from(blockly_xml).map(xml_block => xml_block.getAttribute('type'))
-        );
+        // removeLimitedBlocks(
+        //     workspace,
+        //     Array.from(blockly_xml).map(xml_block => xml_block.getAttribute('type'))
+        // );
 
         if (is_collection) {
             loadBlocks(xml, drop_event, event_group, workspace);
@@ -135,19 +135,19 @@ export const load = ({
 
         // Set user disabled state on all disabled blocks. This ensures we don't change the disabled
         // state through code, which was implemented for user experience.
-        workspace.getAllBlocks().forEach(block => {
-            if (block.disabled) {
-                block.is_user_disabled_state = true;
-            }
-        });
+        // workspace.getAllBlocks().forEach(block => {
+        //     if (block.disabled) {
+        //         block.is_user_disabled_state = true;
+        //     }
+        // });
 
         // Dispatch resize event for comments.
-        window.dispatchEvent(new Event('resize'));
+        // window.dispatchEvent(new Event('resize'));
         if (workspace === Blockly.derivWorkspace) {
             globalObserver.emit('ui.log.success', { log_type: log_types.LOAD_BLOCK });
         }
     } catch (e) {
-        console.log(e); // eslint-disable-line
+        console.warn(e); // eslint-disable-line
         return showInvalidStrategyError();
     }
 
@@ -368,7 +368,7 @@ export const runInvisibleEvents = callbackFn => {
 export const updateDisabledBlocks = (workspace, event) => {
     if (event.type === Blockly.Events.END_DRAG) {
         workspace.getAllBlocks().forEach(block => {
-            if (!block.getParent() || block.is_user_disabled_state) {
+            if (!block.getParent()) {
                 return;
             }
 

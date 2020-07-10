@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Button, Modal, Tabs, Icon } from '@deriv/components';
+import { Button, Modal, Tabs, Icon, Loading } from '@deriv/components';
 import { localize } from '@deriv/translations';
 import { timeSince } from '@deriv/bot-skeleton';
 import { save_types } from '@deriv/bot-skeleton/src/constants/save-type';
@@ -220,6 +220,7 @@ const GoogleDrive = ({ is_authorised, is_open_button_loading, onDriveConnect, on
 const LoadModal = ({
     active_index,
     is_load_modal_open,
+    is_strategy_loading,
     onMount,
     onUnmount,
     setActiveTabIndex,
@@ -236,7 +237,12 @@ const LoadModal = ({
         onUnmount={onUnmount}
         elements_to_ignore={[document.querySelector('.injectionDiv')]}
     >
-        <div className='load__container'>
+        {is_strategy_loading && <Loading is_fullscreen={false} className='load-recent__loading' />}
+        <div
+            className={classnames('load__container', {
+                'load__container--invisible': is_strategy_loading,
+            })}
+        >
             <Tabs active_index={active_index} onTabItemClick={setActiveTabIndex} top fit_content header_fit_content>
                 <div label={localize('Recent')}>
                     <Recent {...props} />
@@ -262,6 +268,7 @@ LoadModal.propTypes = {
     is_authorised: PropTypes.bool,
     is_load_modal_open: PropTypes.bool,
     is_open_button_loading: PropTypes.bool,
+    is_strategy_loading: PropTypes.bool,
     loaded_local_file: PropTypes.object,
     loadFileFromLocal: PropTypes.func,
     loadFileFromRecent: PropTypes.func,
@@ -288,6 +295,7 @@ export default connect(({ load_modal, google_drive }) => ({
     is_authorised: google_drive.is_authorised,
     is_load_modal_open: load_modal.is_load_modal_open,
     is_open_button_loading: load_modal.is_open_button_loading,
+    is_strategy_loading: load_modal.is_strategy_loading,
     loadFileFromLocal: load_modal.loadFileFromLocal,
     loadFileFromRecent: load_modal.loadFileFromRecent,
     loaded_local_file: load_modal.loaded_local_file,
